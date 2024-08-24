@@ -13,24 +13,24 @@
     @apply text-black bg-transparent;
   }
 
-  .scale-200 {
-    --tw-scale-x: 2;
-    --tw-scale-y: 2;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y))
-      rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
-      scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  .baseSection {
+    @apply w-full px-5 pt-20 pb-10;
   }
-  .scale-80 {
-    --tw-scale-x: 0.8;
-    --tw-scale-y: 0.8;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y))
-      rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
-      scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+
+  .gradientDivider {
+    @apply w-full h-0.5 bg-gradient-to-r from-[#f3fbfe00] from-0% via-[#34302B] via-50% to-[#f3fbfe00] to-100%;
   }
 }
 
 @layer utilities {
   .heading1 {
     @apply font-bold text-4xl md:text-[3rem];
+  }
+  .heading2 {
+    @apply font-bold text-2xl md:text-[2.25rem];
+  }
+
+  .heading3 {
+    @apply font-bold text-xl md:text-[1.75rem];
   }
 }

@@ -22,14 +22,14 @@ const Header = () => {
           alt="Logo"
         />
         <div className="z-40 mx-auto mt-20 backdrop-blur-md rounded-2xl px-8 py-8 w-full flex flex-col shadow-xl  md:ml-10 md:max-w-[28rem] md:mt-0 md:mx-0 lg:ml-14 lg:max-w-xl xl:max-w-2xl xl:backdrop-blur-none xl:shadow-none ">
-          <h1 className="font-extrabold text-[2.4rem] mb-10 text-center w-full h-auto leading-none md:text-left md:text-[3rem] ">
-            Dr. Jorge Medeiros, dermatologia especializada
+          <h1 className="font-extrabold text-[2.4rem] mb-10 text-left w-full h-auto leading-none md:text-left md:text-[3rem] ">
+            Dr. Jorge Medeiros Dermatologia Clínica, Cirúrgica E Estética
           </h1>
           <p className="text-xl mb-10 leading-snug font-medium md:text-xl  text-balance ">
-            <span className="font-bold ">⁠Sou Dr. Jorge, </span>
+            <span className="font-bold">⁠Sou Dr. Jorge, </span>
             <br className="md:hidden" />
-            ⁠Sou Dr. Jorge, Médico Dermatologista em Sobral realizando consultas
-            e cirurgias dermatológicas.
+            Médico Dermatologista em Sobral realizando consultas e cirurgias
+            dermatológicas.
           </p>
 
           <button className="group/button btn btn-primary flex items-center justify-center gap-4 w-full shadow-md transition-[200ms] md:w-fit hover:cursor-pointer hover:opacity-90 hover:scale-105">

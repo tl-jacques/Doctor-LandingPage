@@ -17,7 +17,7 @@ const Work = () => {
         <div className=" flex flex-col gap-4 md:gap-10  2xl:gap-16 w-full">
           {works.map((item, index) => (
             <div
-              className="w-full  py-8 px-4 rounded-xl mx-auto lg:max-w-[60rem] xl:max-w-[72rem] 2xl:max-w-[77rem] flex flex-col md:flex-row md:gap-5 even:md:flex-row-reverse odd:lg:mr-10 even:lg:ml-10 "
+              className="w-full  py-8  rounded-xl mx-auto md:px-4 lg:max-w-[60rem] xl:max-w-[72rem] 2xl:max-w-[77rem] flex flex-col md:flex-row md:gap-5 even:md:flex-row-reverse odd:lg:mr-10 even:lg:ml-10 "
               key={index}
             >
               <div className="w-full py-3 md:rounded-lg md:border-2 md:border-color-2 md:p-1 md:h-fit">

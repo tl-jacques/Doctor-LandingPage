@@ -91,3 +91,5 @@ export const questionsAndAnswer = [
 
 export const whatsappLink =
   "https://api.whatsapp.com/send/?phone=5588994935841&text=Oi%20quero%20agendar%20uma%20consulta%20com%20o%20Dr%20Jorge";
+
+export const instagramLink = "https://www.instagram.com/drjorgemedeiros/";

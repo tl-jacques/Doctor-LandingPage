@@ -1,7 +1,7 @@
 const Presentation = () => {
   return (
     <section
-      className="scroll-smooth px-5 py-10 md:px-14 bg-[radial-gradient(ellipse_100%_100%_at_top_right,#34302B,#F3FBFE)]"
+      className=" scroll-smooth baseSection bg-color-dark"
       id="apresentacao"
     >
       <div className="flex flex-col mx-auto lg:max-w-[40rem] xl:max-w-[50rem] 2xl:max-w-[60rem]">
@@ -16,7 +16,7 @@ const Presentation = () => {
               allowFullScreen
             />
           </div>
-          <p className="leading-snug mt-6 font-medium xl:mt-8 xl:leading-normal ">
+          <p className="leading-snug mt-6 font-medium xl:mt-8 xl:leading-normal text-color-1">
             <span className="font-bold text-[1.05rem]">
               Dr. Jorge Medeiros{" "}
             </span>
@@ -35,7 +35,7 @@ const Presentation = () => {
             proporcionar uma pele mais saudável aos seus pacientes.
           </p>
         </div>
-        <button className="w-full mt-4 btn bg-color-6 btn-primary flex items-center justify-center gap-4 shadow-md transition-[200ms] xl:mt-8 hover:cursor-pointer hover:opacity-90 hover:scale-105">
+        <button className="w-full mt-4 btn bg-color-secondary btn-primary flex items-center justify-center gap-4 shadow-md transition-[200ms] xl:mt-8 hover:cursor-pointer hover:opacity-90 hover:scale-105">
           AGENDAR CONSULTA DERMATOLÓGICA
         </button>
       </div>

@@ -1,10 +1,12 @@
 import React from "react";
 import Image from "next/image";
 import presentationImage from "@/assets/apresentacao.jpg";
+import logoHapVida from "@/assets/logo-hapvida-2048.png";
+
 const Curriculum = () => {
   return (
-    <section className="baseSection w-full ">
-      <div className="flex flex-col mx-auto items-center px-1 md:px-10 lg:px-5 lg:flex-row-reverse lg:gap-10 xl:max-w-[67rem] ">
+    <section className="baseSection w-full px-1 md:px-10 lg:px-5 xl:max-w-[67rem] mx-auto ">
+      <div className="flex flex-col mx-auto items-center px-1 md:px-10 lg:px-5 lg:flex-row-reverse lg:gap-10 ">
         <Image
           src={presentationImage}
           alt="Fotografia Dr. Jorge Medeiros"
@@ -12,10 +14,10 @@ const Curriculum = () => {
         />
         <div className=" ">
           <div className="flex flex-col mb-10">
-            <span className=" font-bold text-color-2 mb-1">
+            <span className=" font-bold text-color-secondary mb-1">
               CRM/CE 21881 | RQE 16115
             </span>
-            <h1 className="heading1 text-color-6  text-left">
+            <h1 className="heading1 text-color-dark  text-left">
               Dr. Jorge Medeiros, Médico Dermatologista
             </h1>
           </div>
@@ -50,34 +52,15 @@ const Curriculum = () => {
             paciente. Jorge Medeiros é um dermatologista altamente qualificado e
             experiente, comprometido em proporcionar o melhor cuidado para seus
             pacientes em Sobral, Ceará.
-            {/* <br />
-            <br />
-            Ele se formou em Medicina pela Unifacid, onde desenvolveu uma base
-            sólida de conhecimentos médicos e iniciou sua jornada na área da
-            saúde.
-            <br />
-            <br />
-            Dando continuidade ao seu aprimoramento profissional, Dr. Jorge
-            completou sua residência médica em Dermatologia na renomada
-            Universidade Federal do Ceará, uma das instituições mais respeitadas
-            do país na área da dermatologia. Sua dedicação à especialidade é
-            ainda mais evidenciada pelo fato de ser Membro Titular da Sociedade
-            Brasileira de Dermatologia, uma das mais prestigiadas associações
-            médicas do Brasil, que reúne os melhores dermatologistas do país.
-            Essa titulação atesta não apenas sua qualificação técnica, mas
-            também seu compromisso contínuo com a atualização profissional e a
-            prática de uma medicina dermatológica ética e baseada em evidências.
-            <br />
-            <br />
-            Com um currículo robusto e uma prática focada no cuidado
-            individualizado, Dr. Jorge Medeiros oferece consultas especializadas
-            em condições como acne, psoríase, melasma e dermatite atópica, além
-            de realizar cirurgias dermatológicas para tratamento de câncer de
-            pele e remoção de sinais. Sua atuação é marcada por uma abordagem
-            que une conhecimento técnico avançado e uma atenção cuidadosa às
-            necessidades de seus pacientes. */}
           </p>
         </div>
+      </div>
+      <div className="flex items-center justify-between">
+        <Image width={250} height={250} src={logoHapVida} alt="Logo Hapvida" />
+        <h3 className="heading3 text-color-dark text-sm">
+          Atendimento Particular e
+          <br />pelo convênio Hapvida
+        </h3>
       </div>
     </section>
   );

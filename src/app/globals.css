@@ -14,17 +14,17 @@
   }
 
   .baseSection {
-    @apply w-full px-5 pt-20 pb-20;
+    @apply w-full px-5 pt-20 pb-20 lg:pt-[7rem] lg:pb-[7rem];
   }
 
   .gradientDivider {
-    @apply w-full h-0.5 bg-gradient-to-r from-[#f3fbfe00] from-0% via-[#34302B] via-50% to-[#f3fbfe00] to-100%;
+    @apply w-full h-0.5 bg-gradient-to-r from-[#f3fbfe00] from-0% via-[#191925] via-50% to-[#f3fbfe00] to-100%;
   }
 }
 
 @layer utilities {
   .heading1 {
-    @apply font-bold text-4xl md:text-[3rem];
+    @apply font-bold text-4xl md:text-[3rem] text-color-dark;
   }
   .heading2 {
     @apply font-bold text-2xl md:text-[2.25rem];

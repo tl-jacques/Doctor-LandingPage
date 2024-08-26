@@ -38,6 +38,8 @@ const config: Config = {
           4: "#EDF5F7",
           5: "#36312C",
           6: "#2B201A",
+          secondary: "#B0906A",
+          dark: "#191925",
         },
       },
       scroll: {

@@ -82,14 +82,12 @@ export const questionsAndAnswer = [
       "Dr. Jorge Medeiros atende apenas pelo plano de saúde Hapvida. Para outros planos ou pacientes sem cobertura, os atendimentos são realizados de forma particular.",
   },
   {
-    title: "Como posso agendar uma consulta com o Dr. Jorge Medeiros?",
-    answer:
-      "Para agendar uma consulta, você pode entrar em contato diretamente com a clínica onde o Dr. Jorge Medeiros atende em Sobral. Os horários e disponibilidade serão ajustados de acordo com sua necessidade.",
-  },
-  {
     title:
       "Quais são os cuidados pós-operatórios após uma cirurgia dermatológica?",
     answer:
       "Os cuidados pós-operatórios variam de acordo com o procedimento realizado. Em geral, é importante seguir todas as orientações do Dr. Jorge Medeiros, que podem incluir o uso de medicamentos, evitar a exposição ao sol, e manter a área cirúrgica limpa e protegida Uma consulta de retorno será agendada para acompanhar a recuperação.",
   },
 ];
+
+export const whatsappLink =
+  "https://api.whatsapp.com/send/?phone=5588994935841&text=Oi%20quero%20agendar%20uma%20consulta%20com%20o%20Dr%20Jorge";

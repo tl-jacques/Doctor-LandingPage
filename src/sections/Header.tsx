@@ -1,3 +1,4 @@
+"client component";
 import Image from "next/image";
 
 import imgNoBg from "@/assets/hero-no-bg.png";
@@ -5,10 +6,12 @@ import logo from "@/assets/logo_black.png";
 
 import { FaWhatsapp } from "react-icons/fa";
 import { IoIosArrowDropdown } from "react-icons/io";
+import { whatsappLink } from "@/constants";
+import Link from "next/link";
 
 const Header = () => {
   return (
-    <section className="w-full">
+    <section className="w-full ">
       <div className="py-5 w-full h-full z-20 relative px-5 bg-[radial-gradient(ellipse_200%_150%_at_top_right,#34302B,#F3FBFE)] content-center overflow-clip md:py-2 lg:px-10">
         <div className="flex flex-col absolute -z-50 w-full left-28 bottom-[14rem] max-[390px]:bottom-[16.5rem] scale-[1.9] md:scale-100 md:bottom-[-20%] md:left-[38%] lg:scale-75 lg:bottom-[-55%] xl:scale-[0.6] xl:bottom-[-100%] 2xl:bottom-[-150%] min-[1800px]:scale-[0.4] min-[1800px]:left-[30%] min-[1800px]:bottom-[-180%]">
           <Image className="opacity-85" src={imgNoBg} alt="Imagem de fundo" />
@@ -25,12 +28,14 @@ const Header = () => {
           <p className="text-xl mb-10 leading-snug font-medium md:text-xl  text-balance ">
             <span className="font-bold ">⁠Sou Dr. Jorge, </span>
             <br className="md:hidden" />
-            Médico Dermatologista especialista em soluções eficientes realizando
-            consultas e cirurgias dermatológicas em Sobral, será uma grande
-            alegria lhe atender.
+            ⁠Sou Dr. Jorge, Médico Dermatologista em Sobral realizando consultas
+            e cirurgias dermatológicas.
           </p>
+
           <button className="group/button btn btn-primary flex items-center justify-center gap-4 w-full shadow-md transition-[200ms] md:w-fit hover:cursor-pointer hover:opacity-90 hover:scale-105">
-            AGENDAR CONSULTA
+            <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+              AGENDAR CONSULTA
+            </a>
             <FaWhatsapp className="group-hover/button:text-green-500 w-6 h-6 self-center" />
           </button>
         </div>

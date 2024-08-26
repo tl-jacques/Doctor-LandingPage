@@ -9,7 +9,7 @@ interface DropDownProps {
   text: string;
 }
 const DropDown: React.FC<DropDownProps> = ({ title, text }) => {
-  const [questionOpen, setQuestionOpen] = useState(false);
+  const [questionOpen, setQuestionOpen] = useState(true);
 
   return (
     <li

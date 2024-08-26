@@ -11,7 +11,7 @@ const Complains = () => {
       id="principais-queixas"
     >
       <h1 className="heading1 text-color-6">
-        Principais queixas e reclamações
+        Principais queixas dos meus pacientes
       </h1>
       <ul className="grid grid-cols-2 md:grid-cols-3 gap-x-5 gap-y-7 py-10 2xl:gap-x-12 ">
         {mainComplains.map((item, index) => (

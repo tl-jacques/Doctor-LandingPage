@@ -5,7 +5,7 @@ import logoHapVida from "@/assets/logo-hapvida-2048.png";
 
 const Curriculum = () => {
   return (
-    <section className="baseSection w-full px-1 md:px-10 lg:px-5 xl:max-w-[67rem] mx-auto ">
+    <section className="baseSection  w-full px-1 md:px-10 lg:px-5 xl:max-w-[67rem] mx-auto lg:!pb-[4rem]">
       <div className="flex flex-col mx-auto items-center px-1 md:px-10 lg:px-5 lg:flex-row-reverse lg:gap-10 ">
         <Image
           src={presentationImage}
@@ -56,10 +56,11 @@ const Curriculum = () => {
         </div>
       </div>
       <div className="flex items-center justify-between">
-        <Image width={250} height={250} src={logoHapVida} alt="Logo Hapvida" />
-        <h3 className="heading3 text-color-dark text-sm">
+        <Image width={250} height={300} src={logoHapVida} alt="Logo Hapvida" />
+        <h3 className="heading3 text-color-dark text-sm text-right">
           Atendimento Particular e
-          <br />pelo convênio Hapvida
+          <br />
+          pelo convênio Hapvida
         </h3>
       </div>
     </section>

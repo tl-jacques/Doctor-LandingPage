@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 
-
 interface AccordionProps {
   title: string;
   answer: string;
@@ -10,7 +9,7 @@ const Accordion: React.FC<AccordionProps> = ({ title, answer }) => {
   const [questionOpen, setQuestionOpen] = useState(false);
 
   return (
-    <div className="px-4 py-3 block border-2 border-color-2  rounded-lg ">
+    <div className="px-4 py-3 block border-b-[1px] border-color-2  ">
       <button
         className="flex w-full items-center gap-5 text-center"
         onClick={() => setQuestionOpen(!questionOpen)}
@@ -41,7 +40,7 @@ const Accordion: React.FC<AccordionProps> = ({ title, answer }) => {
           />
         </svg>
 
-        <h3 className="text-lg font-bold ">{title}</h3>
+        <h3 className="text-lg font-bold text-left">{title}</h3>
       </button>
       <div
         onClick={() => setQuestionOpen(!questionOpen)}
@@ -51,7 +50,7 @@ const Accordion: React.FC<AccordionProps> = ({ title, answer }) => {
             : " grid-rows-[0fr] opacity-0"
         }`}
       >
-        <p className=" overflow-hidden text-lg leading-snug font-medium">
+        <p className="text-left overflow-hidden text-lg leading-snug font-medium">
           {answer}
         </p>
       </div>

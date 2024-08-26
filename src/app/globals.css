@@ -14,7 +14,7 @@
   }
 
   .baseSection {
-    @apply w-full px-5 pt-20 pb-10;
+    @apply w-full px-5 pt-20 pb-20;
   }
 
   .gradientDivider {

@@ -7,7 +7,7 @@ import DropDown from "@/components/DropDown";
 const Complains = () => {
   return (
     <section
-      className="baseSection flex flex-col mx-auto items-center text-center"
+      className="baseSection flex flex-col mx-auto items-center text-center md:px-10 lg:px-20 lg:max-w-[70rem]"
       id="principais-queixas"
     >
       <h1 className="heading1 text-color-6">

@@ -57,7 +57,7 @@ const Curriculum = () => {
       </div>
       <div className="flex flex-col md:flex-row items-center justify-between">
         <Image
-          className="w-[10rem] h-[10rem] md:w-[12rem] md:h-[12rem] lg"
+          className="w-[10rem] h-[10rem] md:w-[12rem] md:h-[12rem]"
           src={logoHapVida}
           alt="Logo Hapvida"
         />

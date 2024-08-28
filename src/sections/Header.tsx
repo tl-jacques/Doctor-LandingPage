@@ -1,7 +1,7 @@
 "client component";
 import Image from "next/image";
 
-import imgNoBg from "@/assets/hero-no-bg.png";
+import imgNoBg from "@/assets/drjorge-semfundo.png";
 import logo from "@/assets/logo_black.png";
 
 import { FaWhatsapp } from "react-icons/fa";
@@ -13,7 +13,7 @@ const Header = () => {
   return (
     <section className="w-full ">
       <div className="py-5 w-full h-full z-20 relative px-5 bg-[radial-gradient(ellipse_200%_150%_at_top_right,#34302B,#F3FBFE)] content-center overflow-clip md:py-2 lg:px-10">
-        <div className="flex flex-col absolute -z-50 w-full left-28 bottom-[14rem] max-[390px]:bottom-[16.5rem] scale-[1.9] md:scale-100 md:bottom-[-20%] md:left-[38%] lg:scale-75 lg:bottom-[-55%] xl:scale-[0.6] xl:bottom-[-100%] 2xl:bottom-[-150%] min-[1800px]:scale-[0.4] min-[1800px]:left-[30%] min-[1800px]:bottom-[-180%]">
+        <div className="flex flex-col absolute -z-50 w-full bottom-[12rem] scale-[1.75] max-[390px]:bottom-[15rem] max-[390px]:scale-[1.97] md:scale-[0.9] md:bottom-[-2%] md:left-[24%] lg:scale-[0.6] lg:bottom-[-45%] xl:scale-[0.5] xl:bottom-[-80%] xl:left-[25%] 2xl:bottom-[-90%] min-[1800px]:scale-[0.4] min-[1800px]:left-[30%] min-[1800px]:bottom-[-122%]">
           <Image className="opacity-85" src={imgNoBg} alt="Imagem de fundo" />
         </div>
         <Image

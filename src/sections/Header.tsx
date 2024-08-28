@@ -13,7 +13,7 @@ const Header = () => {
   return (
     <section className="w-full ">
       <div className="py-5 w-full h-full z-20 relative px-5 bg-[radial-gradient(ellipse_200%_150%_at_top_right,#34302B,#F3FBFE)] content-center overflow-clip md:py-2 lg:px-10">
-        <div className="flex flex-col absolute -z-50 w-full bottom-[12rem] scale-[1.75] max-[390px]:bottom-[15rem] max-[390px]:scale-[1.97] md:scale-[0.9] md:bottom-[-2%] md:left-[24%] lg:scale-[0.6] lg:bottom-[-50%] min-[1200px]:bottom-[-65%] xl:scale-[0.5] xl:bottom-[-70%] xl:left-[25%]  min-[1400px]:bottom-[-85%] 2xl:bottom-[-95%] min-[1620px]:bottom-[-110%] min-[1780px]:scale-[0.4] min-[1800px]:left-[30%] min-[1800px]:bottom-[-122%] min-[1970px]:bottom-[-136%] min-[2100px]:bottom-[-147%] min-[2560px]:bottom-[-150%]">
+        <div className="flex flex-col absolute -z-50 w-full bottom-[12rem] scale-[1.75] max-[390px]:bottom-[15rem] max-[390px]:scale-[1.97] md:scale-[0.9] md:bottom-[-7%] md:left-[24%] lg:scale-[0.6] lg:bottom-[-50%] min-[1200px]:bottom-[-65%] xl:scale-[0.5] xl:bottom-[-70%] xl:left-[25%]  min-[1400px]:bottom-[-85%] 2xl:bottom-[-95%] min-[1620px]:bottom-[-110%] min-[1720px]:bottom-[-120%] min-[1780px]:scale-[0.4] min-[1800px]:left-[30%]  min-[1950px]:bottom-[-136%] min-[2075px]:bottom-[-147%] min-[2560px]:bottom-[-150%]">
           <Image className="opacity-85" src={imgNoBg} alt="Imagem de fundo" />
         </div>
         <Image

@@ -1,3 +1,8 @@
+"use client";
+
+import { whatsappLink } from "@/constants";
+import { gtag_report_conversion } from "@/constants/gtm";
+
 const Presentation = () => {
   return (
     <section
@@ -36,7 +41,14 @@ const Presentation = () => {
           </p>
         </div>
         <button className="w-full mt-4 btn bg-color-secondary btn-primary flex items-center justify-center gap-4 shadow-md transition-[200ms] xl:mt-8 hover:cursor-pointer hover:opacity-90 hover:scale-105">
-          AGENDAR CONSULTA DERMATOLÓGICA
+          <a
+            href={whatsappLink}
+            onClick={() => gtag_report_conversion(whatsappLink)}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            AGENDAR CONSULTA
+          </a>
         </button>
       </div>
     </section>

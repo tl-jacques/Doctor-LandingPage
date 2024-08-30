@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import { whatsappLink, works } from "@/constants";
+import { gtag_report_conversion } from "@/constants/gtm";
 
 const Work = () => {
   return (
@@ -39,6 +42,7 @@ const Work = () => {
                 <button className="px-4 py-2 font-bold mt-5 text-color-dark bg-transparent border-2 border-color-dark rounded-xl w-fit shadow-md transition-[200ms] xl:mt-5 hover:cursor-pointer hover:opacity-90 hover:scale-105">
                   <a
                     href={whatsappLink}
+                    onClick={() => gtag_report_conversion(whatsappLink)}
                     target="_blank"
                     rel="noopener noreferrer"
                   >

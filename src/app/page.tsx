@@ -8,6 +8,7 @@ import Presentation from "@/sections/Presentation";
 import Work from "@/sections/Work";
 
 export default function Home() {
+
   return (
     <main className="">
       <div className="relative">

@@ -53,7 +53,7 @@ export const works = [
     videoUrl: "https://www.youtube.com/embed/qMSt1WWy9jw?si=fuSDFVfHI_kSvwBy",
   },
   {
-    title: "Cancer de pele",
+    title: "Câncer de pele",
     text: " O câncer de pele é o tipo mais comum de câncer, incluindo o carcinoma basocelular, o espinocelular e o melanoma. Pessoas com pele clara, predisposição genética ou exposição prolongada ao sol têm maior risco. Manchas ou feridas que não cicatrizam são sinais de alerta. O diagnóstico precoce é crucial, e a remoção cirúrgica pode salvar vidas. Conscientização sobre os sinais e proteção solar são fundamentais para a prevenção.",
     videoUrl: "https://www.youtube.com/embed/crmwODVK_5g?si=QupVryrnUnWCNMI_",
   },
@@ -93,3 +93,5 @@ export const whatsappLink =
   "https://api.whatsapp.com/send/?phone=5588994935841&text=Oi%20quero%20agendar%20uma%20consulta%20com%20o%20Dr%20Jorge";
 
 export const instagramLink = "https://www.instagram.com/drjorgemedeiros/";
+
+

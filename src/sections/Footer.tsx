@@ -1,26 +1,33 @@
-import React from "react";
+"use client";
+
 import Image from "next/image";
 import profileImage from "@/assets/instaProfileImg.png";
 import { whatsappLink, instagramLink } from "@/constants";
+import { gtag_report_conversion } from "@/constants/gtm";
 
 const Footer = () => {
   return (
     <section className=" bg-color-dark flex flex-col items-center ">
       <div className="flex flex-col  items-center back px-[2rem] py-[4rem] md:p-[6rem] ">
         <button className="btn bg-[#6abc54] text-[#ffff] font-bold text-2xl backdrop-brightness-110 drop-shadow-[10px_10px_10px_#6bbc548a] !px-20">
-          <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+          <a
+            href={whatsappLink}
+            onClick={() => gtag_report_conversion(whatsappLink)}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Tenho Interesse
           </a>
         </button>
         <a href={instagramLink} target="_blank" rel="noopener noreferrer">
-          <Image
+          <img
             className="py-12"
-            src={profileImage}
+            src={profileImage.src}
             alt="Instagram Dr Jorge Medeiros"
           />
         </a>
         <div className=" flex flex-col items-center text-center">
-          <p className="font-bold text-xl text-[#ffff] mb-2">Sobral - BRASIL</p>
+          <p className="font-bold text-xl text-[#ffff] mb-2">Sobral - Ceará</p>
           <a
             href="https://maps.app.goo.gl/8j4S6hiJK7g8fgbW6"
             target="_blank"

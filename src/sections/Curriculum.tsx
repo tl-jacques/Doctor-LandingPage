@@ -7,8 +7,8 @@ const Curriculum = () => {
   return (
     <section className="baseSection  w-full px-5 md:px-10 lg:px-5 xl:max-w-[67rem] mx-auto lg:!pb-[4rem]">
       <div className="flex flex-col mx-auto items-center  lg:flex-row-reverse lg:gap-10 ">
-        <Image
-          src={presentationImage}
+        <img
+          src={presentationImage.src}
           alt="Fotografia Dr. Jorge Medeiros"
           className="w-full mb-8 rounded-md  md:w-[25rem] lg:my-auto"
         />
@@ -56,9 +56,9 @@ const Curriculum = () => {
         </div>
       </div>
       <div className="flex flex-col md:flex-row items-center justify-between">
-        <Image
+        <img
           className="w-[10rem] h-[10rem] md:w-[12rem] md:h-[12rem]"
-          src={logoHapVida}
+          src={logoHapVida.src}
           alt="Logo Hapvida"
         />
         <h3 className="heading3 text-color-dark text-sm text-right">

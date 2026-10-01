@@ -1,15 +1,15 @@
 export const mainComplains = [
   {
     title: "Acne",
-    text: "Presença de espinhas, cravos e inflamações na pele, especialmente no rosto, que afetam a estética e a autoestima",
+    text: "Espinhas, cravos e inflamações na pele, especialmente no rosto, que afetam a estética e a autoestima.",
   },
   {
     title: "Melasma",
-    text: " Manchas escuras na pele, geralmente no rosto, que causam preocupação com a aparência",
+    text: "Manchas escuras na pele, geralmente no rosto, que causam preocupação com a aparência.",
   },
   {
     title: "Psoríase",
-    text: "Placas escamosas, vermelhidão e coceira na pele, que podem ser desconfortáveis e visivelmente preocupantes.",
+    text: "Placas escamosas, vermelhidão e coceira na pele, desconfortáveis e visivelmente preocupantes.",
   },
   {
     title: "Dermatite Atópica",
@@ -25,11 +25,11 @@ export const mainComplains = [
   },
   {
     title: "Sinais e Verrugas",
-    text: "Crescimento de sinais ou verrugas que incomodam estética ou funcionalmente, e que podem precisar de remoção.",
+    text: "Sinais ou verrugas que incomodam estética ou funcionalmente e podem precisar de remoção.",
   },
   {
     title: "Manchas na Pele",
-    text: "Descoloração da pele, como hiperpigmentação, que afeta a uniformidade do tom da pele.",
+    text: "Hiperpigmentação e outras descolorações que afetam a uniformidade do tom da pele.",
   },
   {
     title: "Eczemas e Rashes",
@@ -37,7 +37,7 @@ export const mainComplains = [
   },
   {
     title: "Cicatrizes",
-    text: "Cicatrizes de acne, cirurgias ou ferimentos que os pacientes desejam melhorar ou remover por razões estéticas.",
+    text: "Cicatrizes de acne, cirurgias ou ferimentos que se deseja melhorar por razões estéticas.",
   },
 ];
 
@@ -93,8 +93,6 @@ export const whatsappLink =
   "https://api.whatsapp.com/send/?phone=5588994935841&text=Oi%20quero%20agendar%20uma%20consulta%20com%20o%20Dr%20Jorge";
 
 export const instagramLink = "https://www.instagram.com/drjorgemedeiros/";
-
-
 
 export const navLinks = [
   { label: "Apresentação", href: "#apresentacao" },

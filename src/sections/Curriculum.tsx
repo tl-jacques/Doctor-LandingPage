@@ -5,7 +5,9 @@ import logoHapVida from "@/assets/logo-hapvida-2048.png";
 
 const Curriculum = () => {
   return (
-    <section className="baseSection  w-full px-5 md:px-10 lg:px-5 xl:max-w-[67rem] mx-auto lg:!pb-[4rem]">
+    <section
+      id="sobre"
+      className="baseSection  w-full px-5 md:px-10 lg:px-5 xl:max-w-[67rem] mx-auto lg:!pb-[4rem]">
       <div className="flex flex-col mx-auto items-center  lg:flex-row-reverse lg:gap-10 ">
         <img
           src={presentationImage.src}

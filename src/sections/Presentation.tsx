@@ -1,55 +1,61 @@
-"use client";
+import { HiArrowRight } from "react-icons/hi2";
 
-import { whatsappLink } from "@/constants";
-import { gtag_report_conversion } from "@/constants/gtm";
+import posterImage from "@/assets/faqBg.jpg";
+import { presentationVideo } from "@/constants";
+import Eyebrow from "@/components/Eyebrow";
+import VideoFacade from "@/components/VideoFacade";
+import WhatsappLink from "@/components/WhatsappLink";
 
 const Presentation = () => {
   return (
     <section
-      className=" scroll-smooth baseSection bg-color-dark"
       id="apresentacao"
+      aria-labelledby="apresentacao-title"
+      className="bg-espresso py-[4.5rem] text-cream lg:py-[7.5rem]"
     >
-      <div className="flex flex-col mx-auto lg:max-w-[40rem] xl:max-w-[50rem] 2xl:max-w-[60rem]">
-        <div className="w-full py-3 px-2 ">
-          <div className="rounded-md w-full shadow-2xl backdrop-blur-2xl px-2 py-3">
-            <iframe
-              className="w-full h-[20rem] md:h-[23rem] lg:h-[26rem] xl:h-[30rem] 2xl:h-[40rem] "
-              src="https://www.youtube.com/embed/NkuijmYjP8Q?si=EjqKkCZVzhzYUdA9"
-              title="Apresentação dermatologista"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            />
+      {/* Mobile: título → vídeo → texto. Desktop: vídeo à esquerda, texto à direita. */}
+      <div className="container-page flex flex-col gap-6 lg:grid lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)] lg:items-center lg:gap-16 xl:gap-20">
+        <VideoFacade
+          videoId={presentationVideo.id}
+          title={presentationVideo.title}
+          poster={posterImage}
+          label="Apresentação"
+          className="order-2 lg:order-none"
+        />
+
+        <div className="contents lg:flex lg:flex-col lg:gap-7">
+          <div className="order-1 flex flex-col gap-6 lg:order-none">
+            <Eyebrow tone="dark">Apresentação</Eyebrow>
+            <h2
+              id="apresentacao-title"
+              className="heading-display text-[2.625rem] leading-[1.02] md:text-5xl lg:text-[3rem] xl:text-[3.5rem]"
+            >
+              Referência em dermatologia{" "}
+              <em className="italic text-bronze-light">em Sobral.</em>
+            </h2>
           </div>
-          <p className="leading-snug mt-6 font-medium xl:mt-8 xl:leading-normal text-color-1">
-            <span className="font-bold text-[1.05rem]">
-              Dr. Jorge Medeiros{" "}
+
+          <p className="order-3 text-base leading-[1.65] text-mist lg:order-none lg:text-[1.0625rem]">
+            Especializado no tratamento de{" "}
+            <span className="text-cream">
+              acne, psoríase, melasma e dermatite atópica
             </span>
-            é um dermatologista referência em Sobral,{" "}
-            <span className="font-bold">
-              especializado no tratamento de acne, psoríase, melasma e dermatite
-              atópica,
-            </span>{" "}
-            oferecendo cuidados personalizados para melhorar a saúde da pele.
-            Além disso, ele realiza{" "}
-            <span className="font-bold">
+            , o Dr. Jorge oferece cuidados personalizados para a saúde da pele —
+            e realiza{" "}
+            <span className="text-cream">
               cirurgias dermatológicas para câncer de pele e remoção de sinais
             </span>
-            , sempre focando na segurança e na saúde do seu paciente. Dr. Jorge
-            Medeiros combina conhecimento técnico e atenção individualizada para
-            proporcionar uma pele mais saudável aos seus pacientes.
+            , sempre com foco na segurança do paciente.
           </p>
+
+          <WhatsappLink className="btn-pill btn-pill-light order-4 lg:order-none lg:self-start">
+            Agendar consulta
+            <HiArrowRight
+              aria-hidden="true"
+              className="h-[1.125rem] w-[1.125rem]"
+            />
+          </WhatsappLink>
         </div>
-        <button className="w-full mt-4 btn bg-color-secondary btn-primary flex items-center justify-center gap-4 shadow-md transition-[200ms] xl:mt-8 hover:cursor-pointer hover:opacity-90 hover:scale-105">
-          <a
-            href={whatsappLink}
-            onClick={() => gtag_report_conversion(whatsappLink)}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            AGENDAR CONSULTA
-          </a>
-        </button>
       </div>
     </section>
   );

@@ -95,3 +95,23 @@ export const whatsappLink =
 export const instagramLink = "https://www.instagram.com/drjorgemedeiros/";
 
 
+
+export const navLinks = [
+  { label: "Apresentação", href: "#apresentacao" },
+  { label: "Tratamentos", href: "#principais-queixas" },
+  { label: "Vídeos", href: "#videos" },
+  { label: "Sobre", href: "#sobre" },
+  { label: "Dúvidas", href: "#duvidas" },
+];
+
+export const credentials = [
+  { label: "Registro", value: "CRM/CE 21881" },
+  { label: "Especialista", value: "RQE 16115" },
+  { label: "Residência", value: "Dermatologia · UFC" },
+  { label: "Sociedade", value: "Membro Titular SBD" },
+];
+
+export const presentationVideo = {
+  id: "NkuijmYjP8Q",
+  title: "Apresentação do Dr. Jorge Medeiros, dermatologista em Sobral",
+};

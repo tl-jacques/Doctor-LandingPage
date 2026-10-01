@@ -1,9 +1,9 @@
 name: CI
 
+# Roda em todo push (de qualquer branch de etapa) — o resultado aparece
+# também no PR, já que o check fica no commit.
 on:
   push:
-    branches: [master]
-  pull_request:
 
 jobs:
   checks:

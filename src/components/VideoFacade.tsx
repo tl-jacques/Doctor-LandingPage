@@ -47,7 +47,13 @@ const VideoFacade: React.FC<VideoFacadeProps> = ({
         <button
           type="button"
           onClick={() => setPlaying(true)}
-          className="group absolute inset-0 h-full w-full focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-cream"
+          className={twMerge(
+            "group absolute inset-0 h-full w-full focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-4",
+            // Contorno de foco visível tanto sobre foto escura quanto sobre capa clara
+            cover
+              ? "focus-visible:outline-espresso"
+              : "focus-visible:outline-cream",
+          )}
         >
           <span className="sr-only">Assistir vídeo: {title}</span>
           {cover ?? (

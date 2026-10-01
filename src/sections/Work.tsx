@@ -6,7 +6,9 @@ import { gtag_report_conversion } from "@/constants/gtm";
 
 const Work = () => {
   return (
-    <section className="baseSection flex flex-col items-center text-center bg-white ">
+    <section
+      id="videos"
+      className="baseSection flex flex-col items-center text-center bg-white ">
       <div className="mb-4 md:mb-4 lg:px-4">
         <h1 className="heading1 text-color-6 mb-4 lg:mb-8">
           Veja um pouco mais de como posso lhe ajudar

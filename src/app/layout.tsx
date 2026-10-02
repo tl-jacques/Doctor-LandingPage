@@ -44,7 +44,9 @@ export default function RootLayout({
         <GoogleAnalytics gaId="AW-16683907811" />
         <GoogleTagManager gtmId="AW-16683907811" />
       </head>
-      <body className="font-sans antialiased bg-[#EDF5F7]">{children}</body>
+      <body className="bg-porcelain font-sans text-espresso antialiased">
+        {children}
+      </body>
     </html>
   );
 }

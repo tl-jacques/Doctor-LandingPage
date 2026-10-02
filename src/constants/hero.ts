@@ -10,6 +10,9 @@ import heroImage from "@/assets/hero-dr-jorge.jpg";
  *
  * No mobile, nos dois casos, a imagem fica atrás do texto com um véu claro
  * que mantém o contraste de leitura.
+ *
+ * A imagem anterior (drjorge-semfundo.png, tipo "recorte") continua em
+ * src/assets para que a troca possa ser revertida.
  */
 export type HeroImageKind = "recorte" | "foto";
 

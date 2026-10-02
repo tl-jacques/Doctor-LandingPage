@@ -3,8 +3,12 @@
   src="https://www.googletagmanager.com/gtag/js?id=AW-16683907811"
 />;
 
-window.dataLayer = window.dataLayer || [];
+// Só existe `window` no navegador; sem essa checagem o build (pré-renderização) quebra.
+if (typeof window !== "undefined") {
+  window.dataLayer = window.dataLayer || [];
+}
 function gtag() {
+  if (typeof window === "undefined") return;
   dataLayer.push({
     pagePath:
       "https://api.whatsapp.com/send/?phone=5588994935841&amp;text=Oi%20quero%20agendar%20uma%20consulta%20com%20o%20Dr%20Jorge",

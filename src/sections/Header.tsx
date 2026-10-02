@@ -1,63 +1,148 @@
-"use client";
-
 import Image from "next/image";
+import { HiArrowRight, HiPlay } from "react-icons/hi2";
+import { twMerge } from "tailwind-merge";
 
-import imgNoBg from "@/assets/drjorge-semfundo.png";
-import logo from "/public/logo_black.png";
+import logoHapVida from "@/assets/logo-hapvida-2048.png";
+import { credentials } from "@/constants";
+import { hero } from "@/constants/hero";
+import Navbar from "@/components/Navbar";
+import Eyebrow from "@/components/Eyebrow";
+import WhatsappLink from "@/components/WhatsappLink";
 
-import { FaWhatsapp } from "react-icons/fa";
-import { IoIosArrowDropdown } from "react-icons/io";
-import { whatsappLink } from "@/constants";
-import { gtag_report_conversion } from "@/constants/gtm";
+const HapvidaBadge = ({ className }: { className?: string }) => (
+  <div className={className}>
+    <Image
+      src={logoHapVida}
+      alt="Hapvida"
+      className="h-9 w-9 shrink-0 object-contain lg:h-11 lg:w-11"
+      sizes="44px"
+    />
+    <p className="text-sm leading-snug text-[#3E3731]">
+      Atendimento particular e pelo convênio{" "}
+      <strong className="font-semibold text-espresso">Hapvida</strong>
+    </p>
+  </div>
+);
 
 const Header = () => {
+  const isCutout = hero.kind === "recorte";
+
   return (
-    <section className="w-full ">
-      <div className="py-5 w-full h-full z-20 relative px-5 bg-[radial-gradient(ellipse_200%_150%_at_top_right,#34302B,#F3FBFE)] content-center overflow-clip md:py-2 lg:px-10">
-        <div className="flex flex-col absolute -z-50 w-full bottom-[12rem] scale-[1.75] max-[390px]:bottom-[15rem] max-[390px]:scale-[1.97] md:scale-[0.9] md:bottom-[-7%] md:left-[24%] min-[850px]:bottom-[-25%] lg:scale-[0.6] lg:bottom-[-50%] min-[1200px]:bottom-[-65%] xl:scale-[0.5] xl:bottom-[-67%] xl:left-[25%] min-[1400px]:bottom-[-85%] 2xl:bottom-[-95%] min-[1620px]:bottom-[-110%] min-[1720px]:bottom-[-120%] min-[1780px]:scale-[0.4] min-[1950px]:bottom-[-136%] min-[2075px]:bottom-[-147%] min-[2560px]:bottom-[-150%]">
-          <img className="opacity-85" src={imgNoBg.src} alt="Imagem de fundo" />
-        </div>
-        <div className="flex flex-col min-[1850px]:max-w-[1440px] min-[1850px]:mr-auto min-[1850px]:items-center ">
-          <Image
-            className="mt-5 w-32 md:ml-10 md:mt-5 md:mb-5 md:relative md:block md:top-0 md:w-32 lg:ml-20 xl:max-w-lg  min-[1850px]:ml-[27.5rem]"
-            src={logo}
-            alt="Logo"
-          />
-          <div className="z-40 mx-auto mt-20 backdrop-blur-md rounded-2xl px-8 py-8 w-full flex flex-col shadow-xl  md:ml-10 md:max-w-[28rem] md:mt-0 md:mx-0 lg:ml-14 lg:max-w-xl xl:max-w-2xl xl:backdrop-blur-none xl:shadow-none  ">
-            <h1 className="font-extrabold text-[2.4rem] mb-10 text-left w-full h-auto leading-none md:text-left md:text-[3rem] ">
-              Dr. Jorge Medeiros Dermatologia Clínica, Cirúrgica e Estética
+    <header
+      id="topo"
+      className="bg-porcelain pb-[4.5rem] text-espresso lg:pb-[7.5rem]"
+    >
+      <Navbar />
+
+      <section
+        aria-labelledby="hero-title"
+        className="relative isolate overflow-hidden lg:overflow-visible"
+      >
+        <div className="container-page lg:relative lg:grid lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end lg:gap-12 lg:pt-14 xl:gap-20">
+          {/* Mobile: a foto ocupa o fundo do texto. Desktop: vira o arco ao lado do texto. */}
+          <div
+            data-hero-kind={hero.kind}
+            className="absolute inset-x-0 top-0 -z-10 h-[32rem] bg-sand md:h-[40rem] lg:relative lg:inset-auto lg:z-auto lg:order-2 lg:h-[35rem] lg:w-[26rem] lg:bg-transparent xl:h-[45.25rem] xl:w-[33.75rem]"
+          >
+            <div
+              aria-hidden="true"
+              className="absolute inset-x-0 bottom-0 hidden h-[91%] rounded-t-full bg-sand lg:block"
+            />
+            <div
+              className={twMerge(
+                "absolute inset-0",
+                isCutout
+                  ? // Recorte: o médico ultrapassa o topo do arco
+                    "lg:inset-auto lg:-left-[2%] lg:bottom-0 lg:h-[98%] lg:w-[104%]"
+                  : // Foto: recortada no formato do arco
+                    "lg:inset-x-0 lg:top-auto lg:bottom-0 lg:h-[91%] lg:overflow-hidden lg:rounded-t-full",
+              )}
+            >
+              <Image
+                src={hero.image}
+                alt={hero.alt}
+                fill
+                priority
+                sizes={
+                  isCutout
+                    ? "(min-width: 1280px) 560px, (min-width: 1024px) 432px, 100vw"
+                    : // Foto em paisagem preenchendo uma área em retrato: a largura
+                      // desenhada é maior que a área visível
+                      "(min-width: 1280px) 1180px, (min-width: 1024px) 910px, (min-width: 768px) 150vw, 235vw"
+                }
+                className="object-cover"
+                style={{ objectPosition: hero.position }}
+              />
+            </div>
+            {/* Véu claro que garante contraste do texto sobre a foto no mobile */}
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 bg-gradient-to-b from-porcelain/0 from-[28%] via-porcelain/90 via-[50%] to-porcelain to-[68%] lg:hidden"
+            />
+            <HapvidaBadge className="absolute -left-14 bottom-16 hidden w-[15.625rem] items-center gap-3.5 rounded-[1.125rem] bg-ivory px-5 py-[1.125rem] shadow-[0_18px_40px_rgba(30,25,21,0.12)] lg:flex" />
+          </div>
+
+          <div className="relative flex flex-col gap-6 pb-10 pt-[17rem] md:max-w-xl md:pt-[24rem] lg:max-w-none lg:gap-8 lg:self-center lg:pb-24 lg:pt-0">
+            <Eyebrow>Dermatologista em Sobral · CE</Eyebrow>
+
+            <h1
+              id="hero-title"
+              className="heading-display text-[3.125rem] md:text-[4.5rem] lg:text-[4rem] xl:text-[5.5rem]"
+            >
+              Dermatologia clínica, cirúrgica{" "}
+              <em className="italic text-bronze">e estética.</em>
             </h1>
-            <p className="text-xl mb-10 leading-snug font-medium md:text-xl  text-balance ">
-              <span className="font-bold">⁠Sou Dr. Jorge, </span>
-              <br className="md:hidden" />
-              Médico Dermatologista em Sobral realizando consultas e cirurgias
-              dermatológicas.
+
+            <p className="text-[1.0625rem] leading-relaxed text-taupe md:text-xl lg:max-w-[32.5rem]">
+              <strong className="font-semibold text-espresso">
+                Sou Dr. Jorge Medeiros,
+              </strong>{" "}
+              médico dermatologista em Sobral, realizando consultas e cirurgias
+              dermatológicas com cuidado individualizado.
             </p>
 
-            <button className="group/button btn btn-primary flex items-center justify-center gap-4 w-full shadow-md transition-[200ms] md:w-fit hover:cursor-pointer hover:opacity-90 hover:scale-105">
+            <div className="flex flex-col gap-3 sm:flex-row sm:gap-4 lg:flex-col lg:items-start lg:pt-2 xl:flex-row">
+              <WhatsappLink className="btn-pill btn-pill-dark lg:h-[3.75rem] lg:px-[1.875rem]">
+                Agendar pelo WhatsApp
+                <HiArrowRight
+                  aria-hidden="true"
+                  className="h-[1.125rem] w-[1.125rem]"
+                />
+              </WhatsappLink>
               <a
-                href={whatsappLink}
-                onClick={() => gtag_report_conversion(whatsappLink)}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#apresentacao"
+                className="btn-pill btn-pill-outline bg-porcelain/80 pl-2.5 lg:h-[3.75rem] lg:bg-transparent lg:pr-[1.625rem]"
               >
-                AGENDAR CONSULTA
+                <span
+                  aria-hidden="true"
+                  className="flex h-8 w-8 items-center justify-center rounded-full bg-bronze text-ivory lg:h-10 lg:w-10"
+                >
+                  <HiPlay className="ml-0.5 h-3.5 w-3.5" />
+                </span>
+                Assistir apresentação
               </a>
-              <FaWhatsapp className="group-hover/button:text-green-500 w-6 h-6 self-center" />
-            </button>
+            </div>
+
+            <HapvidaBadge className="flex items-center gap-3 self-start rounded-2xl bg-ivory px-4 py-3 shadow-[0_12px_30px_rgba(30,25,21,0.10)] lg:hidden" />
           </div>
         </div>
-        <a
-          className="scroll-smooth group/watch flex flex-col flex-1 mx-auto items-center mt-8 md:mt-10 xl:mt-16 xl:mb-2 hover:cursor-pointer transition-[200ms] hover:scale-105"
-          href={"#apresentacao"}
-        >
-          <p className="font-extrabold text-[1.3rem] mb-1 tracking-tighter">
-            CLIQUE E ASSITA O VÍDEO
-          </p>
-          <IoIosArrowDropdown className="transition-[200ms] group-hover/watch:translate-y-0.5 w-10 h-10 " />
-        </a>
+      </section>
+
+      <div className="container-page">
+        <dl className="grid grid-cols-2 gap-x-4 gap-y-6 border-y border-line py-6 lg:grid-cols-4 lg:gap-8 lg:py-8">
+          {credentials.map((item) => (
+            <div key={item.label} className="flex flex-col gap-1 lg:gap-1.5">
+              <dt className="text-[0.6875rem] uppercase tracking-[0.14em] text-taupe lg:text-xs lg:tracking-[0.16em]">
+                {item.label}
+              </dt>
+              <dd className="font-serif text-[1.3125rem] leading-tight lg:text-[1.625rem]">
+                {item.value}
+              </dd>
+            </div>
+          ))}
+        </dl>
       </div>
-    </section>
+    </header>
   );
 };
 

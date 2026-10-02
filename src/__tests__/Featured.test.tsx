@@ -22,6 +22,24 @@ describe("Featured (Em destaque)", () => {
     ).toHaveAttribute("href", whatsappLink);
   });
 
+  it("segue o design system: Eyebrow, faixa stone e botão escuro padrão", () => {
+    const { container } = render(<Featured />);
+
+    expect(container.querySelector("section")).toHaveClass("bg-stone");
+    // Eyebrow = rótulo em caixa alta com o traço decorativo
+    const tag = screen.getByText("Em destaque");
+    expect(tag).toHaveClass("uppercase", "text-bronze");
+    expect(tag.querySelector('span[aria-hidden="true"]')).not.toBeNull();
+    expect(screen.getByRole("link", { name: /agendar consulta/i })).toHaveClass(
+      "btn-pill",
+      "btn-pill-dark",
+    );
+    // tons reservados às faixas escuras não aparecem numa faixa clara
+    expect(container.innerHTML).not.toMatch(
+      /bronze-light|text-cream|text-mist/,
+    );
+  });
+
   it("usa a capa do próprio vídeo e só carrega o player ao clicar", async () => {
     const user = userEvent.setup();
     const { container } = render(<Featured />);

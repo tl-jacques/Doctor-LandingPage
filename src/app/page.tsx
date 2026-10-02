@@ -1,6 +1,7 @@
 import WhatsappButton from "@/components/WhatsappButton";
 import Complains from "@/sections/Complains";
 import Curriculum from "@/sections/Curriculum";
+import Featured from "@/sections/Featured";
 import FAQ from "@/sections/FAQ";
 import Footer from "@/sections/Footer";
 import Header from "@/sections/Header";
@@ -16,6 +17,7 @@ export default function Home() {
         <Presentation />
         <Complains />
         <Work />
+        <Featured />
         <Curriculum />
         <FAQ />
         <Footer />

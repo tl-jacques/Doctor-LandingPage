@@ -2,27 +2,12 @@ import Image from "next/image";
 import { HiArrowRight, HiPlay } from "react-icons/hi2";
 import { twMerge } from "tailwind-merge";
 
-import logoHapVida from "@/assets/logo-hapvida-2048.png";
 import { credentials } from "@/constants";
 import { hero } from "@/constants/hero";
 import Navbar from "@/components/Navbar";
 import Eyebrow from "@/components/Eyebrow";
+import HapvidaBadge from "@/components/HapvidaBadge";
 import WhatsappLink from "@/components/WhatsappLink";
-
-const HapvidaBadge = ({ className }: { className?: string }) => (
-  <div className={className}>
-    <Image
-      src={logoHapVida}
-      alt="Hapvida"
-      className="h-9 w-9 shrink-0 object-contain lg:h-11 lg:w-11"
-      sizes="44px"
-    />
-    <p className="text-sm leading-snug text-[#3E3731]">
-      Atendimento particular e pelo convênio{" "}
-      <strong className="font-semibold text-espresso">Hapvida</strong>
-    </p>
-  </div>
-);
 
 const Header = () => {
   const isCutout = hero.kind === "recorte";

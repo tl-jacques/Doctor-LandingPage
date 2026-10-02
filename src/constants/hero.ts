@@ -1,6 +1,6 @@
 import type { StaticImageData } from "next/image";
 
-import heroImage from "@/assets/drjorge-semfundo.png";
+import heroImage from "@/assets/hero-dr-jorge.jpg";
 
 /**
  * Imagem do topo da página — único lugar para trocá-la.
@@ -21,7 +21,8 @@ export const hero: {
   position: string;
 } = {
   image: heroImage,
-  kind: "recorte",
-  alt: "Dr. Jorge Medeiros, médico dermatologista",
-  position: "center top",
+  kind: "foto",
+  alt: "Dr. Jorge Medeiros, médico dermatologista, sorrindo em seu consultório",
+  // O médico está à direita da foto (paisagem); 84% o centraliza no recorte
+  position: "84% center",
 };

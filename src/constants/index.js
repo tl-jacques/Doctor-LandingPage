@@ -118,3 +118,9 @@ export const presentationVideo = {
   id: "NkuijmYjP8Q",
   title: "Apresentação do Dr. Jorge Medeiros, dermatologista em Sobral",
 };
+
+export const featuredVideo = {
+  id: "v-Th99QctsQ",
+  title: "Jornada da cirurgia dermatológica",
+  text: "Um vídeo para mostrar de forma mais próxima como funciona a jornada cirúrgica dermatológica, trazendo mais clareza, segurança e confiança para o paciente.",
+};

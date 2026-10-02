@@ -14,12 +14,14 @@ vi.mock("next/image", () => ({
     alt,
     fill: _fill,
     priority: _priority,
+    unoptimized: _unoptimized,
     ...props
   }: {
     src: string | { src: string };
     alt: string;
     fill?: boolean;
     priority?: boolean;
+    unoptimized?: boolean;
   }) =>
     createElement("img", {
       src: typeof src === "string" ? src : src.src,

@@ -10,9 +10,20 @@ type VideoFacadeProps = {
   title: string;
   className?: string;
 } & (
-  | { poster: StaticImageData; label?: string; cover?: never }
+  | {
+      poster: StaticImageData;
+      label?: string;
+      cover?: never;
+      coverTone?: never;
+    }
   // Capa própria (ex.: cards de vídeo sem foto); o botão e o player continuam aqui.
-  | { cover: React.ReactNode; poster?: never; label?: never }
+  | {
+      cover: React.ReactNode;
+      /** Tom da capa, para o contorno de foco contrastar (padrão: clara). */
+      coverTone?: "light" | "dark";
+      poster?: never;
+      label?: never;
+    }
 );
 
 // Mostra a capa e só carrega o player do YouTube quando o paciente clica,
@@ -23,6 +34,7 @@ const VideoFacade: React.FC<VideoFacadeProps> = ({
   poster,
   label,
   cover,
+  coverTone = "light",
   className,
 }) => {
   const [playing, setPlaying] = useState(false);
@@ -50,7 +62,7 @@ const VideoFacade: React.FC<VideoFacadeProps> = ({
           className={twMerge(
             "group absolute inset-0 h-full w-full focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-4",
             // Contorno de foco visível tanto sobre foto escura quanto sobre capa clara
-            cover
+            cover && coverTone === "light"
               ? "focus-visible:outline-espresso"
               : "focus-visible:outline-cream",
           )}

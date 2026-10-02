@@ -69,17 +69,17 @@ export const questionsAndAnswer = [
     title:
       "Quais são as principais condições tratadas pelo Dr. Jorge Medeiros?",
     answer:
-      "Dr. Jorge Medeiros é especializado no tratamento de diversas condições dermatológicas, incluindo acne, psoríase, melasma, dermatite atópica, além de realizar cirurgias dermatológicas para remoção de sinais e tratamento de câncer de pele.",
+      "Dr. Jorge Medeiros é especializado no tratamento de diversas condições dermatológicas, incluindo acne, psoríase, melasma e dermatite atópica, além de realizar cirurgias dermatológicas para remoção de sinais e tratamento de câncer de pele.",
   },
   {
     title: "Como é realizado o tratamento para acne?",
     answer:
-      "O tratamento da acne é personalizado de acordo com a gravidade e tipo da condição. Pode incluir medicamentos tópicos, orais, tratamentos a laser, e procedimentos estéticos. A consulta inicial é fundamental para determinar o melhor plano de tratamento.",
+      "O tratamento da acne é personalizado de acordo com a gravidade e o tipo da condição. Pode incluir medicamentos tópicos, orais, tratamentos a laser e procedimentos estéticos. A consulta inicial é fundamental para determinar o melhor plano de tratamento.",
   },
   {
     title: "O Dr. Jorge Medeiros realiza cirurgia dermatológica?",
     answer:
-      "Sim, Dr. Jorge Medeiros realiza cirurgias dermatológicas para uma variedade de condições, incluindo remoção de sinais, verrugas, cistos, e tratamento de câncer de pele. Esses procedimentos são feitos de forma segura e com foco na saúde e estética do paciente.",
+      "Sim. Dr. Jorge Medeiros realiza cirurgias dermatológicas para uma variedade de condições, incluindo remoção de sinais, verrugas, cistos e tratamento de câncer de pele — procedimentos feitos de forma segura e com foco na saúde e estética do paciente.",
   },
   {
     title: "O Dr. Jorge Medeiros atende por plano de saúde?",
@@ -90,7 +90,7 @@ export const questionsAndAnswer = [
     title:
       "Quais são os cuidados pós-operatórios após uma cirurgia dermatológica?",
     answer:
-      "Os cuidados pós-operatórios variam de acordo com o procedimento realizado. Em geral, é importante seguir todas as orientações do Dr. Jorge Medeiros, que podem incluir o uso de medicamentos, evitar a exposição ao sol, e manter a área cirúrgica limpa e protegida Uma consulta de retorno será agendada para acompanhar a recuperação.",
+      "Os cuidados variam de acordo com o procedimento. Em geral, é importante seguir todas as orientações do Dr. Jorge, que podem incluir o uso de medicamentos, evitar a exposição ao sol e manter a área cirúrgica limpa e protegida. Uma consulta de retorno será agendada para acompanhar a recuperação.",
   },
 ];
 

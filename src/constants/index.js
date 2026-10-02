@@ -124,3 +124,17 @@ export const featuredVideo = {
   title: "Jornada da cirurgia dermatológica",
   text: "Um vídeo para mostrar de forma mais próxima como funciona a jornada cirúrgica dermatológica, trazendo mais clareza, segurança e confiança para o paciente.",
 };
+
+export const education = [
+  { title: "Medicina — Unifacid", detail: "Graduação", icon: "graduacao" },
+  {
+    title: "Residência em Dermatologia — UFC",
+    detail: "Universidade Federal do Ceará",
+    icon: "residencia",
+  },
+  {
+    title: "Membro Titular — SBD",
+    detail: "Sociedade Brasileira de Dermatologia",
+    icon: "sociedade",
+  },
+];

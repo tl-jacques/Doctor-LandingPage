@@ -63,7 +63,13 @@ const Header = () => {
                 alt={hero.alt}
                 fill
                 priority
-                sizes="(min-width: 1280px) 560px, (min-width: 1024px) 432px, 100vw"
+                sizes={
+                  isCutout
+                    ? "(min-width: 1280px) 560px, (min-width: 1024px) 432px, 100vw"
+                    : // Foto em paisagem preenchendo uma área em retrato: a largura
+                      // desenhada é maior que a área visível
+                      "(min-width: 1280px) 1180px, (min-width: 1024px) 910px, (min-width: 768px) 150vw, 235vw"
+                }
                 className="object-cover"
                 style={{ objectPosition: hero.position }}
               />

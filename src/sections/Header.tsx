@@ -1,9 +1,10 @@
 import Image from "next/image";
 import { HiArrowRight, HiPlay } from "react-icons/hi2";
+import { twMerge } from "tailwind-merge";
 
-import imgNoBg from "@/assets/drjorge-semfundo.png";
 import logoHapVida from "@/assets/logo-hapvida-2048.png";
 import { credentials } from "@/constants";
+import { hero } from "@/constants/hero";
 import Navbar from "@/components/Navbar";
 import Eyebrow from "@/components/Eyebrow";
 import WhatsappLink from "@/components/WhatsappLink";
@@ -24,6 +25,8 @@ const HapvidaBadge = ({ className }: { className?: string }) => (
 );
 
 const Header = () => {
+  const isCutout = hero.kind === "recorte";
+
   return (
     <header
       id="topo"
@@ -37,19 +40,32 @@ const Header = () => {
       >
         <div className="container-page lg:relative lg:grid lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end lg:gap-12 lg:pt-14 xl:gap-20">
           {/* Mobile: a foto ocupa o fundo do texto. Desktop: vira o arco ao lado do texto. */}
-          <div className="absolute inset-x-0 top-0 -z-10 h-[32rem] bg-sand md:h-[40rem] lg:relative lg:inset-auto lg:z-auto lg:order-2 lg:h-[35rem] lg:w-[26rem] lg:bg-transparent xl:h-[45.25rem] xl:w-[33.75rem]">
+          <div
+            data-hero-kind={hero.kind}
+            className="absolute inset-x-0 top-0 -z-10 h-[32rem] bg-sand md:h-[40rem] lg:relative lg:inset-auto lg:z-auto lg:order-2 lg:h-[35rem] lg:w-[26rem] lg:bg-transparent xl:h-[45.25rem] xl:w-[33.75rem]"
+          >
             <div
               aria-hidden="true"
               className="absolute inset-x-0 bottom-0 hidden h-[91%] rounded-t-full bg-sand lg:block"
             />
-            <div className="absolute inset-0 lg:inset-auto lg:-left-[2%] lg:bottom-0 lg:h-[98%] lg:w-[104%]">
+            <div
+              className={twMerge(
+                "absolute inset-0",
+                isCutout
+                  ? // Recorte: o médico ultrapassa o topo do arco
+                    "lg:inset-auto lg:-left-[2%] lg:bottom-0 lg:h-[98%] lg:w-[104%]"
+                  : // Foto: recortada no formato do arco
+                    "lg:inset-x-0 lg:top-auto lg:bottom-0 lg:h-[91%] lg:overflow-hidden lg:rounded-t-full",
+              )}
+            >
               <Image
-                src={imgNoBg}
-                alt="Dr. Jorge Medeiros, médico dermatologista"
+                src={hero.image}
+                alt={hero.alt}
                 fill
                 priority
                 sizes="(min-width: 1280px) 560px, (min-width: 1024px) 432px, 100vw"
-                className="object-cover object-top"
+                className="object-cover"
+                style={{ objectPosition: hero.position }}
               />
             </div>
             {/* Véu claro que garante contraste do texto sobre a foto no mobile */}

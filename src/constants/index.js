@@ -1,15 +1,15 @@
 export const mainComplains = [
   {
     title: "Acne",
-    text: "Presença de espinhas, cravos e inflamações na pele, especialmente no rosto, que afetam a estética e a autoestima",
+    text: "Espinhas, cravos e inflamações na pele, especialmente no rosto, que afetam a estética e a autoestima.",
   },
   {
     title: "Melasma",
-    text: " Manchas escuras na pele, geralmente no rosto, que causam preocupação com a aparência",
+    text: "Manchas escuras na pele, geralmente no rosto, que causam preocupação com a aparência.",
   },
   {
     title: "Psoríase",
-    text: "Placas escamosas, vermelhidão e coceira na pele, que podem ser desconfortáveis e visivelmente preocupantes.",
+    text: "Placas escamosas, vermelhidão e coceira na pele, desconfortáveis e visivelmente preocupantes.",
   },
   {
     title: "Dermatite Atópica",
@@ -25,11 +25,11 @@ export const mainComplains = [
   },
   {
     title: "Sinais e Verrugas",
-    text: "Crescimento de sinais ou verrugas que incomodam estética ou funcionalmente, e que podem precisar de remoção.",
+    text: "Sinais ou verrugas que incomodam estética ou funcionalmente e podem precisar de remoção.",
   },
   {
     title: "Manchas na Pele",
-    text: "Descoloração da pele, como hiperpigmentação, que afeta a uniformidade do tom da pele.",
+    text: "Hiperpigmentação e outras descolorações que afetam a uniformidade do tom da pele.",
   },
   {
     title: "Eczemas e Rashes",
@@ -37,26 +37,31 @@ export const mainComplains = [
   },
   {
     title: "Cicatrizes",
-    text: "Cicatrizes de acne, cirurgias ou ferimentos que os pacientes desejam melhorar ou remover por razões estéticas.",
+    text: "Cicatrizes de acne, cirurgias ou ferimentos que se deseja melhorar por razões estéticas.",
   },
 ];
 
 export const works = [
   {
     title: "Acne",
-    text: "A acne é uma condição dermatológica comum, especialmente durante a adolescência, marcada por espinhas, cravos e inflamações. Além de afetar a pele, pode impactar a autoestima. Conhecer suas causas e explorar tratamentos, como medicamentos e procedimentos estéticos, é essencial para um controle eficaz e duradouro.",
-    videoUrl: "https://www.youtube.com/embed/6ZJpuktJB1E?si=4ktl-LCNUPoZZRwj",
+    text: "Condição comum, especialmente na adolescência, marcada por espinhas, cravos e inflamações que podem impactar a autoestima. Conhecer suas causas e explorar tratamentos — medicamentos e procedimentos estéticos — é essencial para um controle eficaz e duradouro.",
+    videoId: "6ZJpuktJB1E",
   },
   {
-    title: "Cirurgias Dermatologicas",
-    text: "As cirurgias dermatológicas tratam diversas condições da pele, como sinais, verrugas, cistos e até tumores malignos. Esses procedimentos, realizados por especialistas, são indicados tanto por motivos estéticos quanto funcionais, garantindo a saúde e a aparência da pele. Fatores como genética, exposição ao sol e histórico familiar podem influenciar essas condições.",
-    videoUrl: "https://www.youtube.com/embed/qMSt1WWy9jw?si=fuSDFVfHI_kSvwBy",
+    title: "Cirurgias dermatológicas",
+    text: "Tratam sinais, verrugas, cistos e até tumores malignos. Indicadas por motivos estéticos ou funcionais, garantem a saúde e a aparência da pele. Genética, exposição ao sol e histórico familiar podem influenciar essas condições.",
+    videoId: "qMSt1WWy9jw",
   },
   {
     title: "Câncer de pele",
-    text: " O câncer de pele é o tipo mais comum de câncer, incluindo o carcinoma basocelular, o espinocelular e o melanoma. Pessoas com pele clara, predisposição genética ou exposição prolongada ao sol têm maior risco. Manchas ou feridas que não cicatrizam são sinais de alerta. O diagnóstico precoce é crucial, e a remoção cirúrgica pode salvar vidas. Conscientização sobre os sinais e proteção solar são fundamentais para a prevenção.",
-    videoUrl: "https://www.youtube.com/embed/crmwODVK_5g?si=QupVryrnUnWCNMI_",
+    text: "O tipo de câncer mais comum — carcinoma basocelular, espinocelular e melanoma. Manchas ou feridas que não cicatrizam são sinais de alerta. O diagnóstico precoce é crucial, e a proteção solar é fundamental para a prevenção.",
+    videoId: "crmwODVK_5g",
   },
+];
+
+export const services = [
+  "Consultas dermatológicas",
+  "Cirurgias dermatológicas",
 ];
 
 export const questionsAndAnswer = [
@@ -93,8 +98,6 @@ export const whatsappLink =
   "https://api.whatsapp.com/send/?phone=5588994935841&text=Oi%20quero%20agendar%20uma%20consulta%20com%20o%20Dr%20Jorge";
 
 export const instagramLink = "https://www.instagram.com/drjorgemedeiros/";
-
-
 
 export const navLinks = [
   { label: "Apresentação", href: "#apresentacao" },

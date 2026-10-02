@@ -138,3 +138,14 @@ export const education = [
     icon: "sociedade",
   },
 ];
+
+export const contact = {
+  clinic: "Clínica Arte de Cuidar",
+  street: "Av. Gerardo Rangel, 436 — Derby Clube",
+  city: "Sobral · CE, 62041-380",
+  mapsLink: "https://maps.app.goo.gl/8j4S6hiJK7g8fgbW6",
+  phone: "(88) 99493-5841",
+  instagramHandle: "@drjorgemedeiros",
+  developerName: "Pacientes Todo Dia",
+  developerLink: "https://pacientestododia.com.br/",
+};

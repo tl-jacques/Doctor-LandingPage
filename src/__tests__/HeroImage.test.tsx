@@ -13,8 +13,8 @@ async function renderHeaderWith(kind: "recorte" | "foto") {
       position: "40% 20%",
     },
   }));
-  const { default: Header } = await import("@/sections/Header");
-  return render(<Header />);
+  const { default: Hero } = await import("@/sections/Hero");
+  return render(<Hero />);
 }
 
 describe("Imagem do hero", () => {

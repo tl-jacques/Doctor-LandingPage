@@ -4,21 +4,19 @@ import { twMerge } from "tailwind-merge";
 
 import { credentials } from "@/constants";
 import { hero } from "@/constants/hero";
-import Navbar from "@/components/Navbar";
 import Eyebrow from "@/components/Eyebrow";
 import HapvidaBadge from "@/components/HapvidaBadge";
 import WhatsappLink from "@/components/WhatsappLink";
 
-const Header = () => {
+// Topo da página (hero + credenciais). O menu fica no <header> da página.
+const Hero = () => {
   const isCutout = hero.kind === "recorte";
 
   return (
-    <header
+    <div
       id="topo"
       className="bg-porcelain pb-[4.5rem] text-espresso lg:pb-[7.5rem]"
     >
-      <Navbar />
-
       <section
         aria-labelledby="hero-title"
         className="relative isolate overflow-hidden lg:overflow-visible"
@@ -127,8 +125,8 @@ const Header = () => {
           ))}
         </dl>
       </div>
-    </header>
+    </div>
   );
 };
 
-export default Header;
+export default Hero;

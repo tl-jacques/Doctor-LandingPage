@@ -1,13 +1,13 @@
 import { describe, expect, it } from "vitest";
 import { render, screen, within } from "@testing-library/react";
 
-import Header from "@/sections/Header";
+import Hero from "@/sections/Hero";
 import { credentials, whatsappLink } from "@/constants";
 import { hero } from "@/constants/hero";
 
-describe("Header", () => {
+describe("Hero", () => {
   it("mostra o título principal da página", () => {
-    render(<Header />);
+    render(<Hero />);
 
     expect(
       screen.getByRole("heading", {
@@ -18,7 +18,7 @@ describe("Header", () => {
   });
 
   it("lista todas as credenciais do médico", () => {
-    render(<Header />);
+    render(<Hero />);
 
     for (const item of credentials) {
       const term = screen.getByText(item.label, { selector: "dt" });
@@ -27,7 +27,7 @@ describe("Header", () => {
   });
 
   it("leva o paciente ao WhatsApp e ao vídeo de apresentação", () => {
-    render(<Header />);
+    render(<Hero />);
     const heroRegion = screen.getByRole("region", {
       name: /dermatologia clínica/i,
     });
@@ -41,7 +41,7 @@ describe("Header", () => {
   });
 
   it("descreve a foto do médico para leitores de tela", () => {
-    render(<Header />);
+    render(<Hero />);
 
     const img = screen.getByAltText(hero.alt);
     expect(img).toBeInTheDocument();

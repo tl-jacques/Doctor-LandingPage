@@ -5,6 +5,12 @@ import { twMerge } from "tailwind-merge";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
 import { GOOGLE_ADS_ID } from "@/constants/gtm";
+import {
+  siteDescription,
+  siteName,
+  siteTitle,
+  siteUrl,
+} from "@/constants/site";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -19,8 +25,24 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Dr. Jorge Medeiros | Dermatologista",
-  description: "Dermatologia especializada em Sobral-CE ",
+  metadataBase: new URL(siteUrl),
+  title: siteTitle,
+  description: siteDescription,
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    url: "/",
+    siteName,
+    title: siteTitle,
+    description: siteDescription,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteTitle,
+    description: siteDescription,
+  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({

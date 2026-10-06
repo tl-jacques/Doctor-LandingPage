@@ -1,3 +1,4 @@
+import StructuredData from "@/components/StructuredData";
 import WhatsappButton from "@/components/WhatsappButton";
 import Complains from "@/sections/Complains";
 import Curriculum from "@/sections/Curriculum";
@@ -9,9 +10,8 @@ import Presentation from "@/sections/Presentation";
 import Work from "@/sections/Work";
 
 export default function Home() {
-
   return (
-    <main className="">
+    <main>
       <div className="relative">
         <Header />
         <Presentation />
@@ -22,6 +22,7 @@ export default function Home() {
         <FAQ />
         <Footer />
         <WhatsappButton />
+        <StructuredData />
       </div>
     </main>
   );

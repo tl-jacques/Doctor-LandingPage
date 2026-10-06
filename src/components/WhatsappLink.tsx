@@ -12,7 +12,7 @@ const WhatsappLink: React.FC<WhatsappLinkProps> = ({ className, children }) => {
   return (
     <a
       href={whatsappLink}
-      onClick={() => gtag_report_conversion(whatsappLink)}
+      onClick={() => gtag_report_conversion()}
       target="_blank"
       rel="noopener noreferrer"
       className={className}

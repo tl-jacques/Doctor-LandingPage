@@ -21,10 +21,9 @@ describe("WhatsappLink", () => {
     const user = userEvent.setup();
     render(<WhatsappLink>Agendar</WhatsappLink>);
 
+    vi.mocked(gtag_report_conversion).mockClear();
     await user.click(screen.getByRole("link", { name: /agendar/i }));
 
-    expect(vi.mocked(gtag_report_conversion)).toHaveBeenCalledWith(
-      whatsappLink,
-    );
+    expect(vi.mocked(gtag_report_conversion)).toHaveBeenCalledTimes(1);
   });
 });

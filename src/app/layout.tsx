@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { DM_Sans, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { twMerge } from "tailwind-merge";
-import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
-import Script from "next/script";
+import { GoogleAnalytics } from "@next/third-parties/google";
+
+import { GOOGLE_ADS_ID } from "@/constants/gtm";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -36,14 +37,8 @@ export default function RootLayout({
         "scroll-smooth",
       )}
     >
-      <head>
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=AW-16683907811"
-        />
-        <GoogleAnalytics gaId="AW-16683907811" />
-        <GoogleTagManager gtmId="AW-16683907811" />
-      </head>
+      {/* Carrega o gtag.js uma vez e cria window.gtag (Google Ads) */}
+      <GoogleAnalytics gaId={GOOGLE_ADS_ID} />
       <body className="bg-porcelain font-sans text-espresso antialiased">
         {children}
       </body>

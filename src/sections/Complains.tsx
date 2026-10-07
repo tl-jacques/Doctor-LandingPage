@@ -9,7 +9,7 @@ const Complains = () => {
       className="bg-porcelain pb-[4.5rem] pt-20 text-espresso lg:pb-[7.5rem] lg:pt-32"
     >
       <div className="container-page flex flex-col gap-10 lg:gap-16">
-        <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between lg:gap-20">
+        <div className="reveal flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between lg:gap-20">
           <div className="flex flex-col gap-5">
             <Eyebrow>Tratamentos</Eyebrow>
             <h2
@@ -30,7 +30,7 @@ const Complains = () => {
           {mainComplains.map((item, index) => (
             <li
               key={item.title}
-              className="flex gap-4 border-b border-line py-5 md:min-h-[15.625rem] md:flex-col md:gap-3.5 md:border-r md:px-7 md:pb-9 md:pt-8 lg:px-5 xl:px-7"
+              className="reveal flex gap-4 border-b border-line py-5 md:min-h-[15.625rem] md:flex-col md:gap-3.5 md:border-r md:px-7 md:pb-9 md:pt-8 lg:px-5 xl:px-7"
             >
               <span
                 aria-hidden="true"

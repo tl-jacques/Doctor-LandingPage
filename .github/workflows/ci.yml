@@ -1,0 +1,23 @@
+name: CI
+
+# Roda em todo push (de qualquer branch de etapa) — o resultado aparece
+# também no PR, já que o check fica no commit.
+on:
+  push:
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+      - run: npm run lint
+      - run: npm test
+      # O build também faz a checagem de tipos do TypeScript
+      - run: npm run build

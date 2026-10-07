@@ -1,15 +1,48 @@
 import type { Metadata } from "next";
-import { DM_Sans } from "next/font/google";
+import { DM_Sans, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { twMerge } from "tailwind-merge";
-import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
-import Script from "next/script";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
-const dmSans = DM_Sans({ subsets: ["latin"] });
+import { GOOGLE_ADS_ID } from "@/constants/gtm";
+import {
+  siteDescription,
+  siteName,
+  siteTitle,
+  siteUrl,
+} from "@/constants/site";
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
+
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
+  variable: "--font-serif",
+});
 
 export const metadata: Metadata = {
-  title: "Dr. Jorge Medeiros | Dermatologista",
-  description: "Dermatologia especializada em Sobral-CE ",
+  metadataBase: new URL(siteUrl),
+  title: siteTitle,
+  description: siteDescription,
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    url: "/",
+    siteName,
+    title: siteTitle,
+    description: siteDescription,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteTitle,
+    description: siteDescription,
+  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({
@@ -18,16 +51,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <head>
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=AW-16683907811"
-        />
-        <GoogleAnalytics gaId="AW-16683907811" />
-        <GoogleTagManager gtmId="AW-16683907811" />
-      </head>
-      <body className={twMerge(dmSans.className, "antialiased bg-[#EDF5F7]")}>
+    <html
+      lang="pt-BR"
+      className={twMerge(
+        dmSans.variable,
+        instrumentSerif.variable,
+        "scroll-smooth",
+      )}
+    >
+      {/* Carrega o gtag.js uma vez e cria window.gtag (Google Ads) */}
+      <GoogleAnalytics gaId={GOOGLE_ADS_ID} />
+      <body className="bg-porcelain font-sans text-espresso antialiased">
         {children}
       </body>
     </html>

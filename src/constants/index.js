@@ -1,15 +1,15 @@
 export const mainComplains = [
   {
     title: "Acne",
-    text: "Presença de espinhas, cravos e inflamações na pele, especialmente no rosto, que afetam a estética e a autoestima",
+    text: "Espinhas, cravos e inflamações na pele, especialmente no rosto, que afetam a estética e a autoestima.",
   },
   {
     title: "Melasma",
-    text: " Manchas escuras na pele, geralmente no rosto, que causam preocupação com a aparência",
+    text: "Manchas escuras na pele, geralmente no rosto, que causam preocupação com a aparência.",
   },
   {
     title: "Psoríase",
-    text: "Placas escamosas, vermelhidão e coceira na pele, que podem ser desconfortáveis e visivelmente preocupantes.",
+    text: "Placas escamosas, vermelhidão e coceira na pele, desconfortáveis e visivelmente preocupantes.",
   },
   {
     title: "Dermatite Atópica",
@@ -25,11 +25,11 @@ export const mainComplains = [
   },
   {
     title: "Sinais e Verrugas",
-    text: "Crescimento de sinais ou verrugas que incomodam estética ou funcionalmente, e que podem precisar de remoção.",
+    text: "Sinais ou verrugas que incomodam estética ou funcionalmente e podem precisar de remoção.",
   },
   {
     title: "Manchas na Pele",
-    text: "Descoloração da pele, como hiperpigmentação, que afeta a uniformidade do tom da pele.",
+    text: "Hiperpigmentação e outras descolorações que afetam a uniformidade do tom da pele.",
   },
   {
     title: "Eczemas e Rashes",
@@ -37,26 +37,31 @@ export const mainComplains = [
   },
   {
     title: "Cicatrizes",
-    text: "Cicatrizes de acne, cirurgias ou ferimentos que os pacientes desejam melhorar ou remover por razões estéticas.",
+    text: "Cicatrizes de acne, cirurgias ou ferimentos que se deseja melhorar por razões estéticas.",
   },
 ];
 
 export const works = [
   {
     title: "Acne",
-    text: "A acne é uma condição dermatológica comum, especialmente durante a adolescência, marcada por espinhas, cravos e inflamações. Além de afetar a pele, pode impactar a autoestima. Conhecer suas causas e explorar tratamentos, como medicamentos e procedimentos estéticos, é essencial para um controle eficaz e duradouro.",
-    videoUrl: "https://www.youtube.com/embed/6ZJpuktJB1E?si=4ktl-LCNUPoZZRwj",
+    text: "Condição comum, especialmente na adolescência, marcada por espinhas, cravos e inflamações que podem impactar a autoestima. Conhecer suas causas e explorar tratamentos — medicamentos e procedimentos estéticos — é essencial para um controle eficaz e duradouro.",
+    videoId: "6ZJpuktJB1E",
   },
   {
-    title: "Cirurgias Dermatologicas",
-    text: "As cirurgias dermatológicas tratam diversas condições da pele, como sinais, verrugas, cistos e até tumores malignos. Esses procedimentos, realizados por especialistas, são indicados tanto por motivos estéticos quanto funcionais, garantindo a saúde e a aparência da pele. Fatores como genética, exposição ao sol e histórico familiar podem influenciar essas condições.",
-    videoUrl: "https://www.youtube.com/embed/qMSt1WWy9jw?si=fuSDFVfHI_kSvwBy",
+    title: "Cirurgias dermatológicas",
+    text: "Tratam sinais, verrugas, cistos e até tumores malignos. Indicadas por motivos estéticos ou funcionais, garantem a saúde e a aparência da pele. Genética, exposição ao sol e histórico familiar podem influenciar essas condições.",
+    videoId: "qMSt1WWy9jw",
   },
   {
     title: "Câncer de pele",
-    text: " O câncer de pele é o tipo mais comum de câncer, incluindo o carcinoma basocelular, o espinocelular e o melanoma. Pessoas com pele clara, predisposição genética ou exposição prolongada ao sol têm maior risco. Manchas ou feridas que não cicatrizam são sinais de alerta. O diagnóstico precoce é crucial, e a remoção cirúrgica pode salvar vidas. Conscientização sobre os sinais e proteção solar são fundamentais para a prevenção.",
-    videoUrl: "https://www.youtube.com/embed/crmwODVK_5g?si=QupVryrnUnWCNMI_",
+    text: "O tipo de câncer mais comum — carcinoma basocelular, espinocelular e melanoma. Manchas ou feridas que não cicatrizam são sinais de alerta. O diagnóstico precoce é crucial, e a proteção solar é fundamental para a prevenção.",
+    videoId: "crmwODVK_5g",
   },
+];
+
+export const services = [
+  "Consultas dermatológicas",
+  "Cirurgias dermatológicas",
 ];
 
 export const questionsAndAnswer = [
@@ -64,17 +69,17 @@ export const questionsAndAnswer = [
     title:
       "Quais são as principais condições tratadas pelo Dr. Jorge Medeiros?",
     answer:
-      "Dr. Jorge Medeiros é especializado no tratamento de diversas condições dermatológicas, incluindo acne, psoríase, melasma, dermatite atópica, além de realizar cirurgias dermatológicas para remoção de sinais e tratamento de câncer de pele.",
+      "Dr. Jorge Medeiros é especializado no tratamento de diversas condições dermatológicas, incluindo acne, psoríase, melasma e dermatite atópica, além de realizar cirurgias dermatológicas para remoção de sinais e tratamento de câncer de pele.",
   },
   {
     title: "Como é realizado o tratamento para acne?",
     answer:
-      "O tratamento da acne é personalizado de acordo com a gravidade e tipo da condição. Pode incluir medicamentos tópicos, orais, tratamentos a laser, e procedimentos estéticos. A consulta inicial é fundamental para determinar o melhor plano de tratamento.",
+      "O tratamento da acne é personalizado de acordo com a gravidade e o tipo da condição. Pode incluir medicamentos tópicos, orais, tratamentos a laser e procedimentos estéticos. A consulta inicial é fundamental para determinar o melhor plano de tratamento.",
   },
   {
     title: "O Dr. Jorge Medeiros realiza cirurgia dermatológica?",
     answer:
-      "Sim, Dr. Jorge Medeiros realiza cirurgias dermatológicas para uma variedade de condições, incluindo remoção de sinais, verrugas, cistos, e tratamento de câncer de pele. Esses procedimentos são feitos de forma segura e com foco na saúde e estética do paciente.",
+      "Sim. Dr. Jorge Medeiros realiza cirurgias dermatológicas para uma variedade de condições, incluindo remoção de sinais, verrugas, cistos e tratamento de câncer de pele — procedimentos feitos de forma segura e com foco na saúde e estética do paciente.",
   },
   {
     title: "O Dr. Jorge Medeiros atende por plano de saúde?",
@@ -85,7 +90,7 @@ export const questionsAndAnswer = [
     title:
       "Quais são os cuidados pós-operatórios após uma cirurgia dermatológica?",
     answer:
-      "Os cuidados pós-operatórios variam de acordo com o procedimento realizado. Em geral, é importante seguir todas as orientações do Dr. Jorge Medeiros, que podem incluir o uso de medicamentos, evitar a exposição ao sol, e manter a área cirúrgica limpa e protegida Uma consulta de retorno será agendada para acompanhar a recuperação.",
+      "Os cuidados variam de acordo com o procedimento. Em geral, é importante seguir todas as orientações do Dr. Jorge, que podem incluir o uso de medicamentos, evitar a exposição ao sol e manter a área cirúrgica limpa e protegida. Uma consulta de retorno será agendada para acompanhar a recuperação.",
   },
 ];
 
@@ -94,4 +99,53 @@ export const whatsappLink =
 
 export const instagramLink = "https://www.instagram.com/drjorgemedeiros/";
 
+export const navLinks = [
+  { label: "Apresentação", href: "#apresentacao" },
+  { label: "Tratamentos", href: "#principais-queixas" },
+  { label: "Vídeos", href: "#videos" },
+  { label: "Sobre", href: "#sobre" },
+  { label: "Dúvidas", href: "#duvidas" },
+];
 
+export const credentials = [
+  { label: "Registro", value: "CRM/CE 21881" },
+  { label: "Especialista", value: "RQE 16115" },
+  { label: "Residência", value: "Dermatologia · UFC" },
+  { label: "Sociedade", value: "Membro Titular SBD" },
+];
+
+export const presentationVideo = {
+  id: "NkuijmYjP8Q",
+  title: "Apresentação do Dr. Jorge Medeiros, dermatologista em Sobral",
+};
+
+export const featuredVideo = {
+  id: "v-Th99QctsQ",
+  title: "Jornada da cirurgia dermatológica",
+  text: "Um vídeo para mostrar de forma mais próxima como funciona a jornada cirúrgica dermatológica, trazendo mais clareza, segurança e confiança para o paciente.",
+};
+
+export const education = [
+  { title: "Medicina — Unifacid", detail: "Graduação", icon: "graduacao" },
+  {
+    title: "Residência em Dermatologia — UFC",
+    detail: "Universidade Federal do Ceará",
+    icon: "residencia",
+  },
+  {
+    title: "Membro Titular — SBD",
+    detail: "Sociedade Brasileira de Dermatologia",
+    icon: "sociedade",
+  },
+];
+
+export const contact = {
+  clinic: "Clínica Arte de Cuidar",
+  street: "Av. Gerardo Rangel, 436 — Derby Clube",
+  city: "Sobral · CE, 62041-380",
+  mapsLink: "https://maps.app.goo.gl/8j4S6hiJK7g8fgbW6",
+  phone: "(88) 99493-5841",
+  instagramHandle: "@drjorgemedeiros",
+  developerName: "Pacientes Todo Dia",
+  developerLink: "https://pacientestododia.com.br/",
+};

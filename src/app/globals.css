@@ -3,34 +3,26 @@
 @tailwind utilities;
 
 @layer components {
-  .btn {
-    @apply px-6 md:px-10 py-4 rounded-lg font-bold inline-flex items-center justify-center tracking-tight w-fit;
-  }
-  .btn-primary {
-    @apply bg-black text-white;
-  }
-  .btn-text {
-    @apply text-black bg-transparent;
+  .container-page {
+    @apply mx-auto w-full max-w-[75rem] px-6 md:px-10 xl:px-0;
   }
 
-  .baseSection {
-    @apply w-full px-5 pt-20 pb-20 lg:pt-[7rem] lg:pb-[7rem];
+  .btn-pill {
+    @apply inline-flex h-14 items-center justify-center gap-3 whitespace-nowrap rounded-full px-7 text-base font-semibold transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2;
   }
-
-  .gradientDivider {
-    @apply w-full h-0.5 bg-gradient-to-r from-[#f3fbfe00] from-0% via-[#191925] via-50% to-[#f3fbfe00] to-100%;
+  .btn-pill-dark {
+    @apply bg-espresso text-porcelain hover:bg-bronze focus-visible:outline-espresso;
+  }
+  .btn-pill-light {
+    @apply bg-cream text-espresso hover:bg-ivory focus-visible:outline-cream;
+  }
+  .btn-pill-outline {
+    @apply border border-line-strong text-espresso hover:border-espresso focus-visible:outline-espresso;
   }
 }
 
 @layer utilities {
-  .heading1 {
-    @apply font-bold text-4xl md:text-[3rem] text-color-dark;
-  }
-  .heading2 {
-    @apply font-bold text-2xl md:text-[2.25rem];
-  }
-
-  .heading3 {
-    @apply font-bold text-xl md:text-[1.75rem];
+  .heading-display {
+    @apply font-serif font-normal leading-[0.98] tracking-[-0.01em];
   }
 }

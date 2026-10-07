@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Dr. Jorge Medeiros — Landing page
 
-## Getting Started
+Site do Dr. Jorge Medeiros, dermatologista em Sobral-CE. Uma página só, pensada
+primeiro para o celular, com agendamento pelo WhatsApp.
 
-First, run the development server:
+**Stack:** Next.js 14 (App Router) · React 18 · TypeScript · Tailwind CSS 3 ·
+Vitest + Testing Library. Hospedado na Vercel.
+
+## Rodando localmente
+
+Requer **Node 24** (veja `.nvmrc`; com nvm: `nvm use`).
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm ci          # instala as dependências
+npm run dev     # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+| Comando              | O que faz                                      |
+| -------------------- | ---------------------------------------------- |
+| `npm run dev`        | servidor de desenvolvimento                    |
+| `npm test`           | roda os testes uma vez                         |
+| `npm run test:watch` | testes em modo observação                      |
+| `npm run lint`       | ESLint                                         |
+| `npm run build`      | build de produção (também checa os tipos)      |
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Onde mudar o conteúdo
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Quase todo o texto do site fica em um lugar só, sem mexer nos componentes:
 
-## Learn More
+| O quê                                              | Arquivo                       |
+| -------------------------------------------------- | ----------------------------- |
+| Queixas, vídeos, perguntas, formação, contatos, menu, link e número do WhatsApp | `src/constants/index.js` |
+| Imagem do topo (foto, texto alternativo, enquadramento) | `src/constants/hero.ts`  |
+| Título, descrição e URL do site (SEO)              | `src/constants/site.ts`       |
+| IDs do Google Ads e da conversão do WhatsApp       | `src/constants/gtm.ts`        |
+| Dados para o Google (endereço, telefone — JSON-LD) | `src/components/StructuredData.tsx` |
+| Imagem de compartilhamento (WhatsApp, redes)       | `src/app/opengraph-image.jpg` (1200×630) |
 
-To learn more about Next.js, take a look at the following resources:
+**Imagens:** coloque em `src/assets` no tamanho em que serão usadas (até ~2500 px
+no lado maior). O `next/image` gera as versões leves, mas um original enorme
+deixa a primeira carga lenta.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Estrutura
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```
+src/
+  app/          layout, página, 404, robots, sitemap, estilos globais
+  sections/     uma seção da página por arquivo (Hero, Presentation, ...)
+  components/   peças reutilizáveis (Navbar, VideoFacade, Accordion, ...)
+  constants/    conteúdo e configurações
+  assets/       imagens
+  __tests__/    testes (um arquivo por seção/componente)
+```
 
-## Deploy on Vercel
+Ordem da página (`src/app/page.tsx`): Hero → Apresentação → Queixas →
+Vídeos → Em destaque → Sobre → Dúvidas → Rodapé.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Design system
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Cores definidas em `tailwind.config.ts`:
+
+| Token          | Uso                                         |
+| -------------- | ------------------------------------------- |
+| `porcelain`    | fundo principal                             |
+| `ivory`, `stone`, `cream`, `sand` | faixas e superfícies claras |
+| `espresso`     | texto principal e faixas escuras            |
+| `taupe`        | texto secundário em fundo claro             |
+| `bronze`       | detalhes e destaques em fundo claro         |
+| `mist`, `bronze-light` | texto secundário e detalhes em fundo escuro |
+| `line`, `line-strong`, `espresso-line` | divisórias        |
+
+Fontes: **Instrument Serif** (títulos, classe `heading-display`) e **DM Sans**
+(texto). Classes prontas em `src/app/globals.css`: `container-page`,
+`btn-pill` + `btn-pill-dark` / `btn-pill-light` / `btn-pill-outline`, e
+`reveal` (entrada suave ao rolar). Rótulos de seção usam o componente
+`Eyebrow`.
+
+Alguns cuidados que os testes verificam: um único `h1`, landmarks separados
+(cabeçalho, conteúdo, rodapé), link para pular o menu, links externos em nova
+aba com aviso para leitores de tela e o registro da conversão no clique do
+WhatsApp.
+
+## Fluxo de trabalho (git)
+
+- `master` — produção (a Vercel publica a partir dela).
+- `dev` — integração; recebe cada etapa pronta e vai para a `master` por PR.
+- Cada etapa nasce de uma branch curta a partir da `dev`
+  (`feat/...`, `fix/...`, `ci/...`), com commits pequenos e descritivos.
+  Depois do merge na `dev`, a branch é apagada.
+
+O CI (GitHub Actions) roda lint, testes e build em todo push. Recomendado
+ativar no GitHub *Settings → General → Automatically delete head branches*.
+
+## Deploy
+
+A Vercel faz o deploy de cada push (prévia) e da `master` (produção). Com
+domínio próprio, defina `NEXT_PUBLIC_SITE_URL` (ex.: `https://www.dominio.com.br`)
+nas variáveis de ambiente da Vercel para que links canônicos, sitemap e
+prévias de compartilhamento usem o domínio certo.

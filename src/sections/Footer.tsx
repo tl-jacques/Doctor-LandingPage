@@ -22,7 +22,7 @@ const Footer = () => {
       className="bg-espresso pt-[4.5rem] text-cream lg:pt-28"
     >
       <div className="container-page">
-        <div className="flex flex-col gap-7 border-b border-espresso-line pb-12 lg:flex-row lg:items-end lg:justify-between lg:gap-20 lg:pb-[4.5rem]">
+        <div className="reveal flex flex-col gap-7 border-b border-espresso-line pb-12 lg:flex-row lg:items-end lg:justify-between lg:gap-20 lg:pb-[4.5rem]">
           <h2
             id="rodape-title"
             className="heading-display max-w-[47.5rem] text-5xl md:text-6xl xl:text-[5rem]"

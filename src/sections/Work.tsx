@@ -16,7 +16,7 @@ const Work = () => {
       className="bg-ivory py-20 text-espresso lg:py-[7.5rem]"
     >
       <div className="container-page flex flex-col gap-10 lg:gap-16">
-        <div className="flex flex-col gap-[1.125rem] lg:items-center lg:gap-5 lg:text-center">
+        <div className="reveal flex flex-col gap-[1.125rem] lg:items-center lg:gap-5 lg:text-center">
           <Eyebrow centerOnDesktop>Como posso ajudar</Eyebrow>
           <h2
             id="videos-title"
@@ -41,7 +41,7 @@ const Work = () => {
           {works.map((item, index) => (
             <article
               key={item.videoId}
-              className="flex flex-col gap-[1.125rem] md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-4 lg:flex lg:gap-6"
+              className="reveal flex flex-col gap-[1.125rem] md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-4 lg:flex lg:gap-6"
             >
               <VideoFacade
                 videoId={item.videoId}

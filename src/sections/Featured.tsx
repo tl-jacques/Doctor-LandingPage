@@ -27,7 +27,7 @@ const Featured = () => {
         <VideoFacade
           videoId={featuredVideo.id}
           title={featuredVideo.title}
-          className="order-2 lg:order-none"
+          className="reveal order-2 lg:order-none"
           coverTone="dark"
           cover={
             <span aria-hidden="true" className="absolute inset-0">
@@ -44,7 +44,7 @@ const Featured = () => {
         />
 
         <div className="contents lg:flex lg:flex-col lg:gap-7">
-          <div className="order-1 flex flex-col gap-6 lg:order-none">
+          <div className="reveal order-1 flex flex-col gap-6 lg:order-none">
             <Eyebrow>Em destaque</Eyebrow>
             <h2
               id="destaque-title"

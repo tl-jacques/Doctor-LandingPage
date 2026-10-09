@@ -45,8 +45,8 @@ const Complains = () => {
             </h2>
           </div>
           <p className="max-w-[25rem] text-base leading-relaxed text-taupe lg:text-[1.0625rem]">
-            Cada pele tem uma história. Escolha uma condição para saber mais —
-            todas têm tratamento e acompanhamento.
+            Cada pele tem uma história. Estas são as condições que mais trazem
+            pacientes ao consultório — todas com tratamento e acompanhamento.
           </p>
         </div>
 

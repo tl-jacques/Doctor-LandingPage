@@ -26,3 +26,30 @@
     @apply font-serif font-normal leading-[0.98] tracking-[-0.01em];
   }
 }
+
+/*
+ * Entrada suave dos blocos ao rolar a página, só com CSS (scroll-driven
+ * animations). Onde o navegador não suporta, ou a pessoa pediu menos
+ * movimento, nada muda: o conteúdo já está visível desde o início.
+ */
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: reveal linear both;
+      animation-timeline: view();
+      /* distância fixa: blocos altos aparecem tão rápido quanto os baixos */
+      animation-range: entry 0 entry 10rem;
+    }
+  }
+}

@@ -24,7 +24,7 @@ const Curriculum = () => {
       className="bg-porcelain py-20 text-espresso lg:py-32"
     >
       <div className="container-page flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-16 xl:gap-24">
-        <div className="relative lg:w-[26rem] lg:shrink-0 xl:w-[31.25rem]">
+        <div className="reveal relative lg:w-[26rem] lg:shrink-0 xl:w-[31.25rem]">
           <Image
             src={portrait}
             alt="Dr. Jorge Medeiros de jaleco, com os braços cruzados"
@@ -45,7 +45,7 @@ const Curriculum = () => {
           </div>
         </div>
 
-        <div className="flex flex-col gap-6 lg:gap-7 lg:pt-6">
+        <div className="reveal flex flex-col gap-6 lg:gap-7 lg:pt-6">
           <Eyebrow>CRM/CE 21881 · RQE 16115</Eyebrow>
           <h2
             id="sobre-title"

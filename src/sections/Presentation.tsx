@@ -20,11 +20,11 @@ const Presentation = () => {
           title={presentationVideo.title}
           poster={posterImage}
           label="Apresentação"
-          className="order-2 lg:order-none"
+          className="reveal order-2 lg:order-none"
         />
 
         <div className="contents lg:flex lg:flex-col lg:gap-7">
-          <div className="order-1 flex flex-col gap-6 lg:order-none">
+          <div className="reveal order-1 flex flex-col gap-6 lg:order-none">
             <Eyebrow tone="dark">Apresentação</Eyebrow>
             <h2
               id="apresentacao-title"

@@ -14,7 +14,7 @@ const FAQ = () => {
     >
       {/* Mobile: título → perguntas → botão. Desktop: título e botão à esquerda, perguntas à direita. */}
       <div className="container-page flex flex-col gap-8 lg:grid lg:grid-cols-[22rem_minmax(0,1fr)] lg:grid-rows-[auto_1fr] lg:items-start lg:gap-x-16 xl:grid-cols-[25rem_minmax(0,1fr)] xl:gap-x-24">
-        <div className="flex flex-col gap-5 lg:col-start-1 lg:row-start-1 lg:gap-6">
+        <div className="reveal flex flex-col gap-5 lg:col-start-1 lg:row-start-1 lg:gap-6">
           <Eyebrow>Dúvidas</Eyebrow>
           <h2
             id="duvidas-title"
@@ -28,7 +28,7 @@ const FAQ = () => {
           </p>
         </div>
 
-        <div className="border-t border-line-strong lg:col-start-2 lg:row-span-2 lg:row-start-1">
+        <div className="reveal border-t border-line-strong lg:col-start-2 lg:row-span-2 lg:row-start-1">
           {questionsAndAnswer.map((item, index) => (
             <Accordion
               key={item.title}

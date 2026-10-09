@@ -68,6 +68,33 @@ describe("Complains", () => {
     expect(regions[0].id).toBe(card(third.title).getAttribute("aria-controls"));
   });
 
+  it("clicar no card aberto fecha a explicação; clicar de novo reabre", async () => {
+    const user = userEvent.setup();
+    render(<Complains />);
+    const [first] = mainComplains;
+    const panels = () =>
+      screen
+        .queryAllByRole("region")
+        .filter((region) => region.tagName !== "SECTION");
+
+    await user.click(card(first.title));
+
+    expect(card(first.title)).toHaveAttribute("aria-expanded", "false");
+    expect(panels()).toHaveLength(0);
+    // no desktop, o espaço do painel orienta a escolha
+    expect(
+      screen.getByText(/escolha uma condição para ver a explicação/i),
+    ).toBeInTheDocument();
+
+    await user.click(card(first.title));
+
+    expect(card(first.title)).toHaveAttribute("aria-expanded", "true");
+    expect(panels()).toHaveLength(1);
+    expect(
+      screen.queryByText(/escolha uma condição para ver a explicação/i),
+    ).not.toBeInTheDocument();
+  });
+
   it("mantém todos os textos no HTML para leitores e buscadores", () => {
     const { container } = render(<Complains />);
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { Fragment, useId, useState } from "react";
-import { HiArrowRight } from "react-icons/hi2";
+import { HiArrowRight, HiXMark } from "react-icons/hi2";
 import { twMerge } from "tailwind-merge";
 
 import { mainComplains } from "@/constants";
@@ -24,7 +24,8 @@ const panelOrder = (index: number) => {
 const number = (index: number) => String(index + 1).padStart(2, "0");
 
 const Complains = () => {
-  const [active, setActive] = useState(0);
+  // índice da queixa aberta; null = todas fechadas (clicar no card aberto fecha)
+  const [active, setActive] = useState<number | null>(0);
   const id = useId();
 
   return (
@@ -67,12 +68,12 @@ const Complains = () => {
                   id={`${id}-queixa-${index}`}
                   aria-expanded={selected}
                   aria-controls={`${id}-painel-${index}`}
-                  onClick={() => setActive(index)}
+                  onClick={() => setActive(selected ? null : index)}
                   style={{ order: cardOrder(index) }}
                   className={twMerge(
                     "group flex min-h-[5.5rem] flex-col items-start justify-between gap-3 rounded-2xl border px-4 py-4 text-left transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-espresso md:px-5 lg:min-h-[6rem] lg:px-6 lg:py-5",
                     selected
-                      ? "border-espresso bg-espresso text-porcelain"
+                      ? "border-espresso bg-espresso text-porcelain hover:bg-espresso-line"
                       : "border-line bg-ivory text-espresso hover:border-espresso",
                   )}
                 >
@@ -86,15 +87,15 @@ const Complains = () => {
                     >
                       {number(index)}
                     </span>
-                    <HiArrowRight
-                      aria-hidden="true"
-                      className={twMerge(
-                        "h-4 w-4 rotate-90 transition-[opacity,transform] duration-200 lg:rotate-0",
-                        selected
-                          ? "opacity-100"
-                          : "opacity-0 group-hover:opacity-40",
-                      )}
-                    />
+                    {/* aberto: × indica que clicar de novo fecha */}
+                    {selected ? (
+                      <HiXMark aria-hidden="true" className="h-4 w-4" />
+                    ) : (
+                      <HiArrowRight
+                        aria-hidden="true"
+                        className="h-4 w-4 rotate-90 opacity-0 transition-opacity duration-200 group-hover:opacity-40 lg:rotate-0"
+                      />
+                    )}
                   </span>
                   <span className="font-serif text-[1.375rem] leading-[1.05] md:text-[1.5rem] xl:text-[1.75rem]">
                     {item.title}
@@ -130,6 +131,15 @@ const Complains = () => {
               </Fragment>
             );
           })}
+
+          {/* Desktop, com tudo fechado: o espaço do painel orienta a escolha */}
+          {active === null && (
+            <div className="hidden rounded-[1.25rem] border border-line p-10 lg:col-start-3 lg:row-span-5 lg:row-start-1 lg:flex lg:flex-col lg:justify-end">
+              <p className="max-w-[18rem] font-serif text-[1.75rem] leading-[1.15] text-taupe">
+                Escolha uma condição para ver a explicação.
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </section>
